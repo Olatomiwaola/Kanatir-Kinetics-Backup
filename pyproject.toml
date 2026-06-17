@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kanatir"
+version = "0.1.0"
+description = "Urban AI Intelligence Platform — Project Sentinel (Phase 1)"
+requires-python = ">=3.11"
+dependencies = [
+  "confluent-kafka>=2.4.0",
+  "redis>=5.0.0",
+  "psycopg[binary]>=3.1.0",
+  "pydantic>=2.7.0",
+  "python-dotenv>=1.0.0",
+  "structlog>=24.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+  "pytest-asyncio>=0.23.0",
+  "ruff>=0.4.0",
+  "mypy>=1.10.0",
+]
+
+[tool.setuptools]
+packages = [
+    "kanatir",
+    "kanatir.core",
+    "kanatir.core.udih",
+    "kanatir.core.spe",
+    "kanatir.core.msfe",
+    "kanatir.core.ade",
+    "kanatir.core.csat",
+    "kanatir.core.xai",
+    "kanatir.core.pgc",
+    "kanatir.core.aoag",
+    "kanatir.pipelines",
+    "kanatir.pipelines.cvp",
+    "kanatir.pipelines.app",
+    "kanatir.pipelines.rap",
+    "kanatir.pipelines.esp",
+    "kanatir.pipelines.mip",
+    "kanatir.modules",
+    "kanatir.modules.counter_uas",
+    "kanatir.modules.critical_infra",
+    "kanatir.modules.env_warning",
+    "kanatir.modules.crowd_vehicle",
+    "kanatir.modules.rf_anomaly",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
