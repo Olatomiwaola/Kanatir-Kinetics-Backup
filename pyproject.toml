@@ -23,6 +23,19 @@ dev = [
   "ruff>=0.4.0",
   "mypy>=1.10.0",
 ]
+# Sprint 3-4 vision/acoustic pipelines. Installed on the HOST (native arm64),
+# not in the linux/amd64 stack containers. On Apple Silicon, TensorFlow is the
+# tensorflow-macos wheel; add tensorflow-metal for GPU. Kept out of core deps
+# and CI so the lightweight services and lint/test jobs stay torch/TF-free.
+pipelines = [
+  "opencv-python>=4.9.0",
+  "ultralytics>=8.2.0",       # YOLOv8-nano + ByteTrack
+  "librosa>=0.10.0",          # MFCC + audio loading
+  "sounddevice>=0.4.6",       # live mic capture (APP)
+  "tensorflow-macos>=2.15.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "tensorflow>=2.15.0; sys_platform != 'darwin' or platform_machine != 'arm64'",
+  "tensorflow-hub>=0.16.0",   # YAMNet
+]
 
 [tool.setuptools]
 packages = [
@@ -37,6 +50,7 @@ packages = [
     "kanatir.core.pgc",
     "kanatir.core.aoag",
     "kanatir.pipelines",
+    "kanatir.pipelines.common",
     "kanatir.pipelines.cvp",
     "kanatir.pipelines.app",
     "kanatir.pipelines.rap",
@@ -60,3 +74,6 @@ select = ["E", "F", "I", "UP"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+markers = [
+    "integration: tests requiring a live database or external service",
+]
