@@ -32,8 +32,7 @@ pipelines = [
   "ultralytics>=8.2.0",       # YOLOv8-nano + ByteTrack
   "librosa>=0.10.0",          # MFCC + audio loading
   "sounddevice>=0.4.6",       # live mic capture (APP)
-  "tensorflow-macos>=2.15.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
-  "tensorflow>=2.15.0; sys_platform != 'darwin' or platform_machine != 'arm64'",
+  "tensorflow>=2.16.0",
   "tensorflow-hub>=0.16.0",   # YAMNet
 ]
 
