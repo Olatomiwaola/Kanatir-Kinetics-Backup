@@ -15,7 +15,6 @@ import subprocess
 import sys
 from datetime import UTC, datetime, timedelta
 
-import numpy as np
 import pytest
 
 from kanatir.core.ade.anomaly import (
@@ -36,6 +35,8 @@ from kanatir.core.msfe.fused import (
     FusedObject,
 )
 from kanatir.pipelines.common.envelope import Modality
+
+np = pytest.importorskip("numpy")
 
 
 # --------------------------------------------------------------------------- #
