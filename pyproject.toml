@@ -35,6 +35,11 @@ pipelines = [
   "tensorflow>=2.16.0",
   "tensorflow-hub>=0.16.0",   # YAMNet
 ]
+ade = [
+  "scikit-learn>=1.5.0",   # IsolationForest (the live-gate detector)
+  "torch>=2.3.0",          # scaffolded LSTM-AE + GNN backbone
+  "numpy>=1.26.0",         # feature vectors
+]
 
 [tool.setuptools]
 packages = [

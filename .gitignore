@@ -13,3 +13,7 @@ __pycache__/
 .env
 .venv/
 venv/
+*.pt
+test.avi
+test.wav
+data/.DS_Store # stop tracking .DS_Store
