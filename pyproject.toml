@@ -41,6 +41,22 @@ ade = [
   "numpy>=1.26.0",         # feature vectors
 ]
 
+# Sprint 11-12 XAI attribution. SHAP over the fitted detector for the
+# operator-facing "why". Kept out of core so kanatir.core.xai.explained (the
+# contract) and .explainer (interface + templated NLG) import with no ML present
+# and CI stays torch/shap-free. The authoritative M6 path (TemplatedExplainer)
+# needs NONE of this — attribution is honestly empty without it.
+xai = [
+  "shap>=0.45.0",
+  "numpy>=1.26.0",
+  "scikit-learn>=1.5.0",
+]
+# Optional demo-enrichment ONLY. The Claude API path (XAI_EXPLAINER=claude) is
+# never CI / never the gate path / never the real-time path. Separated from
+# [xai] so anthropic is never forced into the normal XAI install.
+xai-claude = [
+  "anthropic>=0.39.0",
+]
 [tool.setuptools]
 packages = [
     "kanatir",
