@@ -1,0 +1,27 @@
+{
+  "corpus_path": "datasets/ade_fit_corpus/normal_corpus.jsonl",
+  "n_samples": 200,
+  "n_modalities_seen": {
+    "1": 200
+  },
+  "source_clips": [
+    {
+      "path": "datasets/ade_fit_corpus/fit_ambient_concat.wav",
+      "label": "ambient_fit_folds_1_3",
+      "exists": true,
+      "sha256": "3ad45c303c7e0c91c3a164f7f8f646da913476e5dfa2753882ef635efa85ff66"
+    }
+  ],
+  "sensor_capture_config": {
+    "msfe_window_s": 2.0,
+    "app_max_windows": 0,
+    "cvp_max_frames": null,
+    "target": 200,
+    "topic": "fused.objects"
+  },
+  "msfe_window_s": 2.0,
+  "capture_started": "2026-06-23T20:48:33.576982+00:00",
+  "capture_ended": "2026-06-23T20:49:12.967540+00:00",
+  "object_corpus_id": "sha256:7155a7bb7b0208fcb9abbe6987bf7da3",
+  "source_corpus_id": "sha256:17847cc725fd4b5b2ffc44a8fb95ace4"
+}

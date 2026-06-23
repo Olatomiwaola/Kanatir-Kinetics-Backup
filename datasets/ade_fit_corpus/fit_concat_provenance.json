@@ -1,0 +1,1693 @@
+{
+  "split_policy": "esc50_fold_based_disjoint",
+  "fit_folds": [
+    1,
+    2,
+    3
+  ],
+  "n_clips": 240,
+  "out_wav": "datasets/ade_fit_corpus/fit_ambient_concat.wav",
+  "out_wav_sha256": "3ad45c303c7e0c91c3a164f7f8f646da913476e5dfa2753882ef635efa85ff66",
+  "clips": [
+    {
+      "filename": "1-100038-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-100038-A-14.wav",
+      "sha256": "2faa39d8e59e8f292dfbdbe72bd8a00294f9535714b3c19b39904c2c17e14675"
+    },
+    {
+      "filename": "1-101296-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-101296-A-19.wav",
+      "sha256": "b0323e17979ff3d840ce3f9b7f13bf800a69a48f62632162b964efc9bfe4ef10"
+    },
+    {
+      "filename": "1-101296-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-101296-B-19.wav",
+      "sha256": "bdad401df959569dc44ad26fff3ff097de5ac98cde763eb37a557a4ab441440f"
+    },
+    {
+      "filename": "1-115521-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-115521-A-19.wav",
+      "sha256": "87c3f36e376c3c26faac723d3d1a8ba0af76c8b3e1b456cfe4062975e67b88d2"
+    },
+    {
+      "filename": "1-118559-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-118559-A-17.wav",
+      "sha256": "556d465ef6d44075c1c6f881202f001e088c20415e600be9a83714aa5d86ea07"
+    },
+    {
+      "filename": "1-12653-A-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-12653-A-15.wav",
+      "sha256": "9e8ec2f92df6dc2f9673f4c701ac327dc5455e6cfa8e108e0f5443aeaa535a65"
+    },
+    {
+      "filename": "1-12654-A-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-12654-A-15.wav",
+      "sha256": "d2dd3a33d3187b9b643a345e768c4286a12a36fc23a3a2c2aaa525d1ce6e8658"
+    },
+    {
+      "filename": "1-12654-B-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-12654-B-15.wav",
+      "sha256": "0aae7efcfcf849cb630434296b2de3397ecd8aaf51282feab30ee28fd91d2227"
+    },
+    {
+      "filename": "1-137296-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-137296-A-16.wav",
+      "sha256": "73e2dd5e66dda29f76a54b53c3c8e33441d105fc35c1d231bfbd8f7a18442969"
+    },
+    {
+      "filename": "1-15689-A-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-15689-A-4.wav",
+      "sha256": "bdb124b7004b02ab8299f7d7389d15b5eb53e12002cff379d49dcdec4d8b1372"
+    },
+    {
+      "filename": "1-15689-B-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-15689-B-4.wav",
+      "sha256": "db7a1d190931f1101d533661852e3cdebaa2b89c4b743385b201391be7de003d"
+    },
+    {
+      "filename": "1-16746-A-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-16746-A-15.wav",
+      "sha256": "2543c7e9ee65860a5baa39d86040807bf9aa7255b50938e85d478d0f662716dd"
+    },
+    {
+      "filename": "1-17367-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-17367-A-10.wav",
+      "sha256": "d732acd2e0c7c40405968010f49f250740c86998fc416eff2ed5330fc8c89dea"
+    },
+    {
+      "filename": "1-17585-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-17585-A-7.wav",
+      "sha256": "beb564e150ce6aab27740bb44445cc710695979362b43edea09c90552723b9ce"
+    },
+    {
+      "filename": "1-17970-A-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-17970-A-4.wav",
+      "sha256": "3ef1243cfebc5a6d45e8395c505349a1b3cfd5d97ad48ed4dcc68d3b0240e296"
+    },
+    {
+      "filename": "1-18755-A-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-18755-A-4.wav",
+      "sha256": "7fc23f0179e6ab9f9cd851e49c305e773ab5bbc944490b6b67eed30346635598"
+    },
+    {
+      "filename": "1-18755-B-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-18755-B-4.wav",
+      "sha256": "3fadff6b71d7a5d8f96cd098218f55265fb07b9a618943e4a34d5e8b1ca7c6d9"
+    },
+    {
+      "filename": "1-18757-A-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-18757-A-4.wav",
+      "sha256": "dac86a651f49fccc16b5b5de5dac68182ed572841ea5914da2afccc83ae83700"
+    },
+    {
+      "filename": "1-19501-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-19501-A-7.wav",
+      "sha256": "d10dfa62d347aa2b72dc8c6e1c1d76125f59c37d08596f2b62e91e82502acb78"
+    },
+    {
+      "filename": "1-21189-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-21189-A-10.wav",
+      "sha256": "5f15ab2d8f6ef9932909b1b75c8ac254cbea46c93b4b2f0f3542abdf09b9abc0"
+    },
+    {
+      "filename": "1-23094-A-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-23094-A-15.wav",
+      "sha256": "0d346768ebd5359cdc18d871d836c31b0d94dea3e69e9a7a15630ebbe7e1a91e"
+    },
+    {
+      "filename": "1-23094-B-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-23094-B-15.wav",
+      "sha256": "a2b8e98255f517cdacd61cf1a3f35f8c6f15a71e4cc51d0bc1044938f627dd58"
+    },
+    {
+      "filename": "1-23222-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-23222-A-19.wav",
+      "sha256": "680bc85f2f6fb1f0fef85a1f4f059bc7b6957a30d0a0b3dd8e93c287216cbbd5"
+    },
+    {
+      "filename": "1-23222-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-23222-B-19.wav",
+      "sha256": "a48701b1104510004ad4d425bf0dbc8d55b8febd1a603b9e72c1a74075b45c23"
+    },
+    {
+      "filename": "1-24524-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-24524-A-19.wav",
+      "sha256": "a0a8af38dc93186bdaef63b0eff44853604d4c2ba8a2f329109c784a8fab3f67"
+    },
+    {
+      "filename": "1-24524-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-24524-B-19.wav",
+      "sha256": "661ff207a4373a81a5311745e1d51b79bb42ac9825a87a592d21637aa514dbf3"
+    },
+    {
+      "filename": "1-24524-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-24524-C-19.wav",
+      "sha256": "3116ac95bb308961b1581d3db91e9926581ce901507828cf210d5540239239d3"
+    },
+    {
+      "filename": "1-26222-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-26222-A-10.wav",
+      "sha256": "7a03695543a56d61464ea2bd87e0947bb994d38c914492c02be686693b6e1dac"
+    },
+    {
+      "filename": "1-28135-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-28135-A-11.wav",
+      "sha256": "4d04b84d490c4d9ab28a52c4c96d1b14c2f8b132fc4be38166197ae814920742"
+    },
+    {
+      "filename": "1-28135-B-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-28135-B-11.wav",
+      "sha256": "806548ec876df9f91ced5503f76794a42dca6b8790324f87464de5ed780189cb"
+    },
+    {
+      "filename": "1-29532-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-29532-A-16.wav",
+      "sha256": "f7161457776ff69adbb903e870a3ecf532228a033de6896f25af2f4ce77c5f68"
+    },
+    {
+      "filename": "1-29561-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-29561-A-10.wav",
+      "sha256": "4dc600962b53709664b27073f46ef2ad7d766ddad39c3ff04fcaf98442aae65b"
+    },
+    {
+      "filename": "1-31836-A-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-31836-A-4.wav",
+      "sha256": "2807d582aaeaf50414cb7e1e4f0ea2cbfd80727c7a08727eb2b68ed6db30f758"
+    },
+    {
+      "filename": "1-31836-B-4.wav",
+      "category": "frog",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-31836-B-4.wav",
+      "sha256": "d59a86d8a55ceaf65673df4ca0997503ee5f795c3bdb0fcb4b075ec653fa5f82"
+    },
+    {
+      "filename": "1-34495-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-34495-A-14.wav",
+      "sha256": "3641b914303dca50d01c2ab5aceaaf918ce977028f4ee752c22beb64d09eeec3"
+    },
+    {
+      "filename": "1-34497-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-34497-A-14.wav",
+      "sha256": "fcb9f579a65a189a2b0e35a38c6711eaad931aa208c8c43de0bf3ba15cf8380f"
+    },
+    {
+      "filename": "1-38559-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-38559-A-14.wav",
+      "sha256": "bda988c22f4b928012abe6d4231b4244700dc615b6d43f439476cda3d7f8a5d8"
+    },
+    {
+      "filename": "1-38560-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-38560-A-14.wav",
+      "sha256": "d6b1c659ed64ba12036d8834d0af88200849669dd5a16527e583d8c7f8c86106"
+    },
+    {
+      "filename": "1-39901-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-39901-A-11.wav",
+      "sha256": "b1e33d5fe73bc31317fa9fa4e70d0fcaf761346f8a908c89cec50c6c23f41603"
+    },
+    {
+      "filename": "1-39901-B-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-39901-B-11.wav",
+      "sha256": "582d4c541bb4bdbc300ccbbaa52f120931a849b1616a4eb6135cf32c5ba8c517"
+    },
+    {
+      "filename": "1-43760-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-43760-A-11.wav",
+      "sha256": "efd808d11d8df8f75f46b7d4183baf082abce9948985c4fca02e191d3204be10"
+    },
+    {
+      "filename": "1-46040-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-46040-A-14.wav",
+      "sha256": "065fe905f87b0a21efaebb6cd88ecee9fe407eb72bad3b43c52d2e099d262d72"
+    },
+    {
+      "filename": "1-46938-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-46938-A-7.wav",
+      "sha256": "d97f844fa224ecf18068598b5ad83027f6185720071da8e331d14f2e103dd43d"
+    },
+    {
+      "filename": "1-46938-B-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-46938-B-7.wav",
+      "sha256": "53e23b708d758fd482d159a1060aeb121ba478c7d97445facb853e4a99447ef1"
+    },
+    {
+      "filename": "1-47709-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-47709-A-16.wav",
+      "sha256": "179c0a007da435841be8bca63bb0aa44fefc1af1b9dbb2a413f9c0acff805fea"
+    },
+    {
+      "filename": "1-47714-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-47714-A-16.wav",
+      "sha256": "cfcba34eb24f53b5be2c5a824c664dc376890631490c29a46655abb43b19ae8b"
+    },
+    {
+      "filename": "1-50060-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-50060-A-10.wav",
+      "sha256": "cc8119be878eafdc69f7408dad614493a238174372eebf75e4c8314d1bb9807d"
+    },
+    {
+      "filename": "1-50623-A-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-50623-A-15.wav",
+      "sha256": "7d73ac9525cb81fe60a0728b310e1f27affc550945da7fa780961dc2f39cbbc9"
+    },
+    {
+      "filename": "1-50625-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-50625-A-17.wav",
+      "sha256": "267bc4a3836dfc673e404bd12d8655a1e00f01e07078cb9d404d2b82cbd3aa07"
+    },
+    {
+      "filename": "1-50688-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-50688-A-17.wav",
+      "sha256": "9e7efd373b61dda31a96f058fe6fae8f062de6165b91359ee04b0e1b16fd641b"
+    },
+    {
+      "filename": "1-51035-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-51035-A-16.wav",
+      "sha256": "d8b851e1a4210e2a8ef92ce603b4dabe12743a51318a59d3b1d393e856de12b0"
+    },
+    {
+      "filename": "1-51036-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-51036-A-16.wav",
+      "sha256": "77aee0377d909fb77cd085ef1a1828c8aec3da8306e8ca7cf8c17f5c77ae3111"
+    },
+    {
+      "filename": "1-51037-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-51037-A-16.wav",
+      "sha256": "3609c5ef4959aab64c320e757d5d7d6aab49ab027ba9cf955de00874d16e8b23"
+    },
+    {
+      "filename": "1-51433-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-51433-A-17.wav",
+      "sha256": "ae0ad86859a7a981a5a8fc6f9d0eaab709b2095c0f754e2f7dfeab48a5df1fad"
+    },
+    {
+      "filename": "1-51436-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-51436-A-17.wav",
+      "sha256": "39f57dcdf3c76e30f7ffce0e1a3c91b4afbc081d6e86b0503fb03207119c64e2"
+    },
+    {
+      "filename": "1-54918-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-54918-A-14.wav",
+      "sha256": "86ee46f8d022bc8083828f9aacfbcd21602a35002e59740385341268a8df0ddc"
+    },
+    {
+      "filename": "1-54918-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-54918-B-14.wav",
+      "sha256": "86620fddba2ad91ec91181fa049a4e54ab02b667d426f7b4865ae53a3d7f0e45"
+    },
+    {
+      "filename": "1-54958-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-54958-A-10.wav",
+      "sha256": "d93233d42dc57a3e81cb9ca446145f50cdc806f0174393b1055e5d9a327cef86"
+    },
+    {
+      "filename": "1-56311-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-56311-A-10.wav",
+      "sha256": "cf0dcbd49d979bf73992068b51db46cf3098995e66b3fb8ceb6ec276009aadc7"
+    },
+    {
+      "filename": "1-57316-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-57316-A-13.wav",
+      "sha256": "2df85254c1ba9c2bcb8517c8d2b36caeaf60ab6197e2e3b7285680720ecd638c"
+    },
+    {
+      "filename": "1-57318-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-57318-A-13.wav",
+      "sha256": "0e02985a93837d58cfaaf3da12e49bb0438bcd007afc22b46a8bb05002bcb849"
+    },
+    {
+      "filename": "1-59102-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-59102-A-13.wav",
+      "sha256": "e316ba0e0a2e1eafa204909392c0834ee679355e1eb4c583e40624905dd22493"
+    },
+    {
+      "filename": "1-61221-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-61221-A-17.wav",
+      "sha256": "71feb207837a30c5850278db8f09a828bf01bed3c606b6afbc0af15414efc1f2"
+    },
+    {
+      "filename": "1-61252-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-61252-A-11.wav",
+      "sha256": "fb76a05332ed37fa76ef09b878d28831d5c433554d317893a9911384bd84082b"
+    },
+    {
+      "filename": "1-63871-A-10.wav",
+      "category": "rain",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-63871-A-10.wav",
+      "sha256": "9ae1461223eaecf2df3818b51e0d7b5987ef497b17038594455bbcee6673d350"
+    },
+    {
+      "filename": "1-65483-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-65483-A-13.wav",
+      "sha256": "66bea025f6a3fef1d9e92b74bc307cadd090d741420823d727d3eb6b333225e1"
+    },
+    {
+      "filename": "1-67152-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-67152-A-17.wav",
+      "sha256": "f36846074aa0a4ba6ce6041cef2e26c808ca8de5e3ca655525a0ff3fcd01d112"
+    },
+    {
+      "filename": "1-69760-A-16.wav",
+      "category": "wind",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-69760-A-16.wav",
+      "sha256": "60280269ee55438b8c30486db5711cb52d566555aac4abf169ae8cd0d875ec77"
+    },
+    {
+      "filename": "1-73585-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-73585-A-7.wav",
+      "sha256": "167d606a6707a59115243e50b344c5cf97f5865f3ec70585feb7480e15b20dbd"
+    },
+    {
+      "filename": "1-7456-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-7456-A-13.wav",
+      "sha256": "e0d183004905b786e6e5e48aa9b6e0aa7630b4b4dfbaeae5da900c041b5e7408"
+    },
+    {
+      "filename": "1-75189-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-75189-A-7.wav",
+      "sha256": "626f938e5e5ef9fc37f3cc326a3286fb6ad1c8128336dfa02cbf9342eea53b4d"
+    },
+    {
+      "filename": "1-79220-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-79220-A-17.wav",
+      "sha256": "cd339a1d95e502074493699e00ec0fd85d887dbf760de8ebe7be143804f04b02"
+    },
+    {
+      "filename": "1-7973-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-7973-A-7.wav",
+      "sha256": "889f613a74d03a8c299193ca8f37c4468a5b88229932ab2ba3fa0a725d8aabb9"
+    },
+    {
+      "filename": "1-80785-A-7.wav",
+      "category": "insects",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-80785-A-7.wav",
+      "sha256": "c150869a185f1a5d95c0593e2ff248b78219eb9831aeff2dc31d7a241bc18238"
+    },
+    {
+      "filename": "1-80840-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-80840-A-13.wav",
+      "sha256": "9cfbec9acd3a7deee1f7cc758a562911ec357291c633b487880403d3b326d050"
+    },
+    {
+      "filename": "1-80841-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-80841-A-13.wav",
+      "sha256": "dea6239d0ea4995f0f6103bc060541b70a5b514523d5a68187363ff16ea385d9"
+    },
+    {
+      "filename": "1-90797-A-15.wav",
+      "category": "water_drops",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-90797-A-15.wav",
+      "sha256": "53c31439d01c36f13c774287707bb6cb5fe24bdea15e213e4c49fcd88b78b584"
+    },
+    {
+      "filename": "1-91359-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-91359-A-11.wav",
+      "sha256": "dc68614d5082a595bce514b13304d91451cc6d570dddfb84a9283e5d77fc3148"
+    },
+    {
+      "filename": "1-91359-B-11.wav",
+      "category": "sea_waves",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-91359-B-11.wav",
+      "sha256": "119e12872a9ec159c255ddaab2c8382439a97815ce90552273529d53f86ee8ff"
+    },
+    {
+      "filename": "1-9841-A-13.wav",
+      "category": "crickets",
+      "fold": 1,
+      "path": "datasets/ESC-50/audio/1-9841-A-13.wav",
+      "sha256": "42d997027d8227c21fdf7edf24fcee019d6450bfb3343dbfffb5d3210a24c0ff"
+    },
+    {
+      "filename": "2-101676-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-101676-A-10.wav",
+      "sha256": "ef456a67e12d2e2c84513e9eb8bea769e343cd5e0bfe65a34dc96c526f260838"
+    },
+    {
+      "filename": "2-102414-A-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-A-17.wav",
+      "sha256": "2e8840176baf5e07f8f3239fe13f4f43c1c485e05c7f5795204f86d2e60df729"
+    },
+    {
+      "filename": "2-102414-B-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-B-17.wav",
+      "sha256": "07eaaabafd8fa568d1899e721b6a8766d6f34ff817fdcde796eb9bfd6fd3ccea"
+    },
+    {
+      "filename": "2-102414-C-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-C-17.wav",
+      "sha256": "1cd86014c8ee7398c45bcbff388cf8b3006dc017207f409624c9a26c055f539c"
+    },
+    {
+      "filename": "2-102414-D-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-D-17.wav",
+      "sha256": "754e3a3f29218b6742c6b60c26e12fe0693352da38c46015652f1bf2e7fdda05"
+    },
+    {
+      "filename": "2-102414-E-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-E-17.wav",
+      "sha256": "cb27d5f26d6c77c125673db5fce6da58bd49fd70f54459ac4688dff0def317b2"
+    },
+    {
+      "filename": "2-102414-F-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-F-17.wav",
+      "sha256": "a3965c9f4c88fae44f3d26181f27b0f1e8ff050da715529183c9e892b9f6acbd"
+    },
+    {
+      "filename": "2-102414-G-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102414-G-17.wav",
+      "sha256": "41c21f5d38086e121b5b1aba9aecaa984268540d90bee5ecee47af986de1abc6"
+    },
+    {
+      "filename": "2-102852-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-102852-A-11.wav",
+      "sha256": "88e893f0db59886dd96f9b2c0f839eaad0364e9d2ec948eca3ef6af1a66e64b5"
+    },
+    {
+      "filename": "2-104105-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-104105-A-19.wav",
+      "sha256": "2ee21d7425178ca938f3415c8f45682c908902f357a07f727749f863b670e655"
+    },
+    {
+      "filename": "2-104105-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-104105-B-19.wav",
+      "sha256": "8a02fab36f501893605f9e5de65e96c5a6a0828245415991b89828caadfdf180"
+    },
+    {
+      "filename": "2-104952-A-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-104952-A-16.wav",
+      "sha256": "d3f15c7eaac8332a48fb0aeb921d1b50ae8eba558928eaa4f7c30639018854df"
+    },
+    {
+      "filename": "2-104952-B-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-104952-B-16.wav",
+      "sha256": "88d27648c6a78a46cebaba763af5e09dc491296dd49a0a928b1104c1cda1c735"
+    },
+    {
+      "filename": "2-106019-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-106019-A-13.wav",
+      "sha256": "8728828af8b276092646dd7d734502d6dae960aa2f4dc4a585e001645e03d41e"
+    },
+    {
+      "filename": "2-108760-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-108760-A-14.wav",
+      "sha256": "c8b166433114f83cb401192a7f485e501698c9ebc091bf8c4c21a17b9b3040fc"
+    },
+    {
+      "filename": "2-108760-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-108760-B-14.wav",
+      "sha256": "717fd2c117208dde97da875c237918141c66c7a4b92818fd7d236c9fb3fc0783"
+    },
+    {
+      "filename": "2-108761-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-108761-A-14.wav",
+      "sha256": "e8ae4ed6faea0630e7c7f555a73c9dda5e67e37f108b26f8e15d4275dfd53d0c"
+    },
+    {
+      "filename": "2-109371-A-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-109371-A-16.wav",
+      "sha256": "0cf39cf3983eaedfffa3ba3a2a70a4a55146845029f2888fdc66d4c070809c37"
+    },
+    {
+      "filename": "2-109371-B-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-109371-B-16.wav",
+      "sha256": "be0ea8a1ff1748c5c5a4bbff92e03ddb2a67bf4b7f07679047468490d08f8bdc"
+    },
+    {
+      "filename": "2-109371-C-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-109371-C-16.wav",
+      "sha256": "0f4cdd69ef229b244563c681b4b3fde04840941c9304dea0946b919c060752ef"
+    },
+    {
+      "filename": "2-109371-D-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-109371-D-16.wav",
+      "sha256": "c40dcc1e5ee9ab4c3663f0022d9443d2623a0c205924f3e508ee710deb4f0d98"
+    },
+    {
+      "filename": "2-109374-A-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-109374-A-16.wav",
+      "sha256": "a4aaa0c3473b7db30a3738ad432299d2360d2236bb5816c9c5cf1f0fa855f52d"
+    },
+    {
+      "filename": "2-110613-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-110613-A-13.wav",
+      "sha256": "2d52254a00d857f7ac022fa4ab0bcb6cd3cd082d631876c5456994c1e465e9a3"
+    },
+    {
+      "filename": "2-117625-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-117625-A-10.wav",
+      "sha256": "26c3b6b455aeb91f6f3d9a2b00f7e06bd1fc79609606ea2ae86272657dc02e88"
+    },
+    {
+      "filename": "2-122616-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-122616-A-14.wav",
+      "sha256": "3007fb5df39d042addc2a73a2ddd16d246d2cda64fb7b95f9e9134d248cb7818"
+    },
+    {
+      "filename": "2-124564-A-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-124564-A-15.wav",
+      "sha256": "9b8cba3bb95b883c392c6dada8b256a7a8aa708f464de23c4d377fd321a2c38b"
+    },
+    {
+      "filename": "2-124662-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-124662-A-11.wav",
+      "sha256": "60c6883343535fcf14bb030d30c7b79c81fad89fdc7f4e6f34d81c1d98c1e645"
+    },
+    {
+      "filename": "2-125821-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-125821-A-13.wav",
+      "sha256": "2befdc649b281a3a185b10240e83b70210bc262bf8cb2b0edcb443871a5f7077"
+    },
+    {
+      "filename": "2-125875-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-125875-A-13.wav",
+      "sha256": "4c4360eca2d961048bde5fa984ca772b6ac2d2a7e9a7f8ff5c81cc9df6f6b839"
+    },
+    {
+      "filename": "2-125966-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-125966-A-11.wav",
+      "sha256": "86643b7df512575db786b21b70092f27050b81e01f459f7fcbcb862314827e51"
+    },
+    {
+      "filename": "2-126433-A-17.wav",
+      "category": "pouring_water",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-126433-A-17.wav",
+      "sha256": "42ebae9ce17ef3bec250c4ca960c46b951f5b7da04785ba77be66c501d053f29"
+    },
+    {
+      "filename": "2-132157-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-132157-A-11.wav",
+      "sha256": "1925d1067111dd06970446f46a786f261efa68b121039bb5cea4f546f9600685"
+    },
+    {
+      "filename": "2-132157-B-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-132157-B-11.wav",
+      "sha256": "4158aa78341d58d23771deb264c7db18f9a3784b42fc838c77a002cb28e3f784"
+    },
+    {
+      "filename": "2-133863-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-133863-A-11.wav",
+      "sha256": "a5dc90f79b7bfbe1b1b8279d5f5542be82af3fa32502ba57518d1302e9e38a9f"
+    },
+    {
+      "filename": "2-137162-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-137162-A-11.wav",
+      "sha256": "4d9d5bd94694230cc4d40e3c1e1bfc9a91228741fc516946852c0bb8dac6c2de"
+    },
+    {
+      "filename": "2-139748-A-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-139748-A-15.wav",
+      "sha256": "a74cc5a21d30d16ec332bb086b6d1e42636bd8f277b3c7f904701839bc862c2f"
+    },
+    {
+      "filename": "2-139748-B-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-139748-B-15.wav",
+      "sha256": "f00e971cd95874f3db87879e6fd6e687663184db5cb21dd681e44343f02932ee"
+    },
+    {
+      "filename": "2-139749-A-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-139749-A-15.wav",
+      "sha256": "d8304986e4b06f7640ac941182269370cac93ece7088f21a1bf3b4e4d75d87a9"
+    },
+    {
+      "filename": "2-155801-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-155801-A-11.wav",
+      "sha256": "1851566021e7ad54163515236574452dd86cadc4657317f6bc285c9e06a9b436"
+    },
+    {
+      "filename": "2-160128-A-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-160128-A-7.wav",
+      "sha256": "e5b29a67400bf3ad91670d13969771c71b17d33ceb5c73b3325384b1d2b0d55a"
+    },
+    {
+      "filename": "2-205966-A-16.wav",
+      "category": "wind",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-205966-A-16.wav",
+      "sha256": "ddd9c3577d08f999d3f1d8bc487d8a31570dc8380d150cabf50ad74dbca691a2"
+    },
+    {
+      "filename": "2-32515-A-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-32515-A-4.wav",
+      "sha256": "229efc7a3fb6c6cb96dde4ef6c8f9f0472638835249801563d88d68d34885654"
+    },
+    {
+      "filename": "2-32515-B-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-32515-B-4.wav",
+      "sha256": "076124f0a17498055ab1fa51af998dd8e24a96e791e32da1224c69bfab030e95"
+    },
+    {
+      "filename": "2-32515-C-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-32515-C-4.wav",
+      "sha256": "c5755ad48ae74830a7d2d4eb78d844bf931ac4ad7066be27485a9ced1d6daa58"
+    },
+    {
+      "filename": "2-32515-D-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-32515-D-4.wav",
+      "sha256": "f2278cc95bb14afefc5e901618f4fa6d2c3160a9797262b158e71c09d13c11ca"
+    },
+    {
+      "filename": "2-32834-A-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-32834-A-4.wav",
+      "sha256": "f2dfbb926b4c3d69d75ed6dbb9a8a2db93be15cd7fe51ffd3b037ff66f95d723"
+    },
+    {
+      "filename": "2-39441-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-39441-A-19.wav",
+      "sha256": "3ce6a2b28d3934b0267c2eb6171646e3b4be749d4f40b37214efb2d2ca59d1f1"
+    },
+    {
+      "filename": "2-39443-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-39443-A-19.wav",
+      "sha256": "68d84d52cfdfe5ce0d9183074fbe068f27d46a1b817cf4b942fd43f1aa986444"
+    },
+    {
+      "filename": "2-39443-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-39443-B-19.wav",
+      "sha256": "290775ea9db60e5983e4f2a42177c73e9daa129dfb45cc120d6385af20efad26"
+    },
+    {
+      "filename": "2-39945-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-39945-A-19.wav",
+      "sha256": "6e9c5566161ac1dbc87720491cc92e70943ad44d5fd300767959fa4ef1371222"
+    },
+    {
+      "filename": "2-39945-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-39945-B-19.wav",
+      "sha256": "03174476d22286aa7355abe0f4e45f4215da65ce108b2dd4669a9e141e3b501f"
+    },
+    {
+      "filename": "2-39945-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-39945-C-19.wav",
+      "sha256": "85890d5d3d1539a609581bbd1cec56521d842ef545071baafe17283cae94f944"
+    },
+    {
+      "filename": "2-52085-A-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-52085-A-4.wav",
+      "sha256": "5c7f5327e8ae6192b335597171cb6a9157cc5f282ff72c89dfa64dfe4d0a7628"
+    },
+    {
+      "filename": "2-52085-B-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-52085-B-4.wav",
+      "sha256": "9f3adbf5dffeffba4bdcd5991a9acccc9f22e411f553270b94b25ff10fbc44b3"
+    },
+    {
+      "filename": "2-52789-A-4.wav",
+      "category": "frog",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-52789-A-4.wav",
+      "sha256": "2bbc51a820bb26ea757e9bf85d922b0ecc2b6ebe5d91bb1160534fc476429b07"
+    },
+    {
+      "filename": "2-64962-A-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-64962-A-15.wav",
+      "sha256": "2b0c11a021a5b3cd7e95057abdd1116e5db9bc4e5b87c790a77c365f81581969"
+    },
+    {
+      "filename": "2-64963-A-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-64963-A-15.wav",
+      "sha256": "1f7345829f6df2462bcde7de7397305189c39405932cf257ebd47ed22d08ebd1"
+    },
+    {
+      "filename": "2-68595-A-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-68595-A-15.wav",
+      "sha256": "bcc0c2a5a2290256f35f68dc4cbaf39f44f84bd7ff31ccdd782a6edcc83ee406"
+    },
+    {
+      "filename": "2-68595-B-15.wav",
+      "category": "water_drops",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-68595-B-15.wav",
+      "sha256": "55b4eb8b58dcaeea8805d48174f8f71a03b373dbe099ceff7eb2c6eb972f303d"
+    },
+    {
+      "filename": "2-72547-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-72547-A-14.wav",
+      "sha256": "81ef03338b4b86b20bc0e8251d32aec24f2c5ab0d04d90a27c621bf263c8f33d"
+    },
+    {
+      "filename": "2-72547-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-72547-B-14.wav",
+      "sha256": "a0d7dc0e4d408b47be30fc0da4ff4b1f88fd917dcd978dbb48489e5a730a1c5a"
+    },
+    {
+      "filename": "2-72547-C-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-72547-C-14.wav",
+      "sha256": "0b2fa30fd7c1a50c7b02f1865d6417d786d4fea910a14a65de7770a9be2aa57e"
+    },
+    {
+      "filename": "2-72547-D-14.wav",
+      "category": "chirping_birds",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-72547-D-14.wav",
+      "sha256": "49a79fa3b76bdf17e00b0da2f43289b25f0345e989994d15d78bcd8501cda4e1"
+    },
+    {
+      "filename": "2-72970-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-72970-A-10.wav",
+      "sha256": "f6d91324daa8863100c7f922b20727c86d46c27249cce9e15d66305e623e56b8"
+    },
+    {
+      "filename": "2-73027-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-73027-A-10.wav",
+      "sha256": "42eba8ebc797e9fa843e8dbfb907c58ea8c8976277997d5f6e726b1bd3fe4111"
+    },
+    {
+      "filename": "2-73260-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-73260-A-10.wav",
+      "sha256": "206b445eaf57f739c09185695e82bc0c3e7b9f68215ad9f7cb4374f7648e9acc"
+    },
+    {
+      "filename": "2-80844-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-80844-A-13.wav",
+      "sha256": "c782c333b6535d2bdefce90246df3f6890bfb2d241eaf8e3e9278b774abe5397"
+    },
+    {
+      "filename": "2-81731-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-81731-A-10.wav",
+      "sha256": "25d3a915368db5e4175b1d51dea34bfad02d909039a051cbf72c0f39a0f34667"
+    },
+    {
+      "filename": "2-81970-A-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-81970-A-7.wav",
+      "sha256": "424e1adafdcaa01fc5cb9afec55f7f0fa92c73236e113f4919cbc63d58aa2930"
+    },
+    {
+      "filename": "2-81970-B-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-81970-B-7.wav",
+      "sha256": "62ea1a423fe75dae705567ae43b3174e1c92ff4b6fc705285437d7c86beb784b"
+    },
+    {
+      "filename": "2-81970-C-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-81970-C-7.wav",
+      "sha256": "ea94a99a5e6e90e78df9796ffc66b056f9f0b1897e482ac91edcb598296ef922"
+    },
+    {
+      "filename": "2-82077-A-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-82077-A-7.wav",
+      "sha256": "916f2e34ad242ef01de0a1ad323cde7afd32663578774758e869a0f54c292395"
+    },
+    {
+      "filename": "2-82367-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-82367-A-10.wav",
+      "sha256": "2cce637e5f60368db490c8ec980eb0cc7dbdd623c077bcd456a2fb60afdd4820"
+    },
+    {
+      "filename": "2-83270-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-83270-A-13.wav",
+      "sha256": "d926cf001495e9b27a2b2ad4c861bc19612d70d5f3c1f8a0ed8670742d725dc5"
+    },
+    {
+      "filename": "2-85139-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-85139-A-13.wav",
+      "sha256": "cdf2a5251de71ffc19f3f616eb96a78f27feb02122d0c760b38a0f92d11cda93"
+    },
+    {
+      "filename": "2-87781-A-10.wav",
+      "category": "rain",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-87781-A-10.wav",
+      "sha256": "81fe7ce5da401a69a542439a5c8277864468a0bf09bf1378b0accac15c033638"
+    },
+    {
+      "filename": "2-96033-A-13.wav",
+      "category": "crickets",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-96033-A-13.wav",
+      "sha256": "ecebe6fdc3440b0b4849b67dbbf5e31af47952cb6e2248d636671897735a79f7"
+    },
+    {
+      "filename": "2-99955-A-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-99955-A-7.wav",
+      "sha256": "f2e4ede4565714bebf6ce9e575bda1ae4490683e73fbd131121c3fda269d5aec"
+    },
+    {
+      "filename": "2-99955-B-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-99955-B-7.wav",
+      "sha256": "07eb4085a6c48a4c8c8e8b52d0f12ba242ce7c40e5aac030ba2f38b9f3a3f7de"
+    },
+    {
+      "filename": "2-99955-C-7.wav",
+      "category": "insects",
+      "fold": 2,
+      "path": "datasets/ESC-50/audio/2-99955-C-7.wav",
+      "sha256": "36efed273884d26ecb9653d76c71c05e8024a3d2689fe7460e0c6aa7fe87dd3c"
+    },
+    {
+      "filename": "3-102908-A-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-102908-A-4.wav",
+      "sha256": "6ab7175db115e478c82e0981bead1bbd4e5766e1527aef8d1d61c1ba674dd5cc"
+    },
+    {
+      "filename": "3-103050-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-103050-A-19.wav",
+      "sha256": "0cdb8c8e21c3dc74b10c935bf43292c1e3d7d4e7bb7026a0d047054001813295"
+    },
+    {
+      "filename": "3-103051-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-103051-A-19.wav",
+      "sha256": "527de954dc9d28a742146db130fbb8143a446cf88a487c2d43cd0ef22bbd3a3b"
+    },
+    {
+      "filename": "3-103051-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-103051-B-19.wav",
+      "sha256": "46b360eaebee376c82a17c6737ad581bf8dde1717e0ae9172480154154c7479a"
+    },
+    {
+      "filename": "3-103051-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-103051-C-19.wav",
+      "sha256": "80910d45d6680671f39a17a8a21d376d3299c5648a44564016e9a39427e5dd38"
+    },
+    {
+      "filename": "3-104761-A-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-104761-A-7.wav",
+      "sha256": "a035a81227152c0b54fb9d63bfdce5f00a0ff2a967c239fbdb15c80d73441e07"
+    },
+    {
+      "filename": "3-104761-B-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-104761-B-7.wav",
+      "sha256": "b13051656d00b823f59a0678fcd133880f6f7858de77c254066188f01190f94d"
+    },
+    {
+      "filename": "3-105235-A-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-105235-A-7.wav",
+      "sha256": "188bf6625b13c616fd825a2977d0bcd7a051aceea71c1a84dd1379b8ea261175"
+    },
+    {
+      "filename": "3-105236-A-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-105236-A-7.wav",
+      "sha256": "dad8e9e5161d0044d5a3bf1251ae795bb4903718645b979003128fbb75ecb557"
+    },
+    {
+      "filename": "3-108451-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-108451-A-17.wav",
+      "sha256": "b03020a9662624137b529ea76eb7f5074ca4fd906e1526b747b0ec305988cda1"
+    },
+    {
+      "filename": "3-108451-B-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-108451-B-17.wav",
+      "sha256": "5101384cdccfaebd28afa9acef532a3b3a1a66df4ae4b827ada0eeb2a63a93c6"
+    },
+    {
+      "filename": "3-110913-A-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-110913-A-7.wav",
+      "sha256": "1d807fd9a43b9493102f43e59e1b231f4698da8164c5f634ec0acf0d4eb4b968"
+    },
+    {
+      "filename": "3-110913-B-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-110913-B-7.wav",
+      "sha256": "7b1d051e87b0f5f5b3bea09438c5ecddc6cd4ea63af8eb475dca7620a4542b3c"
+    },
+    {
+      "filename": "3-110913-C-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-110913-C-7.wav",
+      "sha256": "8d6e7220816ccd1f08e15474445806217412c1683d12ce2eb21cb57a16444602"
+    },
+    {
+      "filename": "3-110913-D-7.wav",
+      "category": "insects",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-110913-D-7.wav",
+      "sha256": "9bacabbba20e42035df9ab4c25f962b9b990c89b9c4812cd2d7f082b43c9a59a"
+    },
+    {
+      "filename": "3-117504-A-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-117504-A-16.wav",
+      "sha256": "e8870d76a3bb29b43606231859c1b75ffc6dfaded319944028d122993470669e"
+    },
+    {
+      "filename": "3-117504-B-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-117504-B-16.wav",
+      "sha256": "c57afdb76acf9b99fa15282bca63f411c280a158e905c2619488aabbf53ef04e"
+    },
+    {
+      "filename": "3-123224-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-123224-A-19.wav",
+      "sha256": "e14050de1c0176d92f3dc430bf8d71f41930226649bf355c5cb37b1db0ba25b5"
+    },
+    {
+      "filename": "3-124600-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-124600-A-19.wav",
+      "sha256": "f1842cefb0f9f540f4cb0024bf0454e5966e4bcccf39b7a36c149451152b4eeb"
+    },
+    {
+      "filename": "3-127874-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-127874-A-17.wav",
+      "sha256": "8ff35e0895866b584c9156693116b59583c97ee776d6401622bb4c8ce9928d32"
+    },
+    {
+      "filename": "3-129338-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-129338-A-13.wav",
+      "sha256": "2b2bd8a6bca8ba75fc635a6028e4e906c028f59f818de1bf929aa6eb710b0376"
+    },
+    {
+      "filename": "3-129678-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-129678-A-13.wav",
+      "sha256": "f6ae5649cfa7ef7276fbe0d04694edf9524b425213fe06a446648e5dbf2912b9"
+    },
+    {
+      "filename": "3-132852-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-132852-A-10.wav",
+      "sha256": "5d4960883ceabe28c008721ea3b5f5206a6f0234cacd4c1af81dd7594b4d3503"
+    },
+    {
+      "filename": "3-134699-A-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-134699-A-16.wav",
+      "sha256": "1801639106154163503cde2fb8544efc6ab5d4e95a09f5b780efb7f44a017fbf"
+    },
+    {
+      "filename": "3-134699-B-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-134699-B-16.wav",
+      "sha256": "4836977a0362e609b42dcc47811190268da98d573cecc7a8a4270db979ecea54"
+    },
+    {
+      "filename": "3-134699-C-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-134699-C-16.wav",
+      "sha256": "3c313aab15b8bf3a3ca3dccfc0bb81281f4cb440231f8ce8cc90c141033a64e5"
+    },
+    {
+      "filename": "3-134802-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-134802-A-13.wav",
+      "sha256": "1dd6708b6f727f3b361367dcad1e50f69b912921699e81de153ec349ba24f5b0"
+    },
+    {
+      "filename": "3-136608-A-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-136608-A-16.wav",
+      "sha256": "0fb13968566e14200c01ac1aa3f0f878f8e11ba806fb4d5e2b19d34eb4844cc8"
+    },
+    {
+      "filename": "3-140774-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-140774-A-10.wav",
+      "sha256": "1dd994fb071b52e4232b0cbd06558dd8d179008be2e4cf1f41d4abdca4f390fe"
+    },
+    {
+      "filename": "3-142005-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-142005-A-10.wav",
+      "sha256": "784441f1c74be9dc64ec77aa9628df5b4557711b5f1435286dff9ea9317f02e0"
+    },
+    {
+      "filename": "3-142006-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-142006-A-10.wav",
+      "sha256": "bd24c750af1d7ed49a3d19ecc4401cd10368a18e02a07c3a5524fdb7a576d5af"
+    },
+    {
+      "filename": "3-142349-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-142349-A-17.wav",
+      "sha256": "0e3b1f625c5ef610b4d89e9569b751a491ecf3c2a0b15700afa3824a397dafa6"
+    },
+    {
+      "filename": "3-143929-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-143929-A-10.wav",
+      "sha256": "5510934acbb493aee8e975d5b1c1b34b1a39ef0b870e6091778909995fef9004"
+    },
+    {
+      "filename": "3-144827-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-144827-A-11.wav",
+      "sha256": "553ceeb0be8984ea22e9ae1b4c892e76c19867e9240d5f9367c62b08ee7eba4e"
+    },
+    {
+      "filename": "3-144827-B-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-144827-B-11.wav",
+      "sha256": "977a5b671cb9b57aea049bce2b1c139c039aa745c5c46c1f84964d8098381aa8"
+    },
+    {
+      "filename": "3-144891-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-144891-A-19.wav",
+      "sha256": "945cc1af1c6a8da8227f9a19a4caa4b8e46900d13ff13162b9f8d588107af4af"
+    },
+    {
+      "filename": "3-144891-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-144891-B-19.wav",
+      "sha256": "31a199e7042205a1066faca86517a4f7bddfa604d5fa0dc0feca46e62a9dfc48"
+    },
+    {
+      "filename": "3-145719-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-145719-A-17.wav",
+      "sha256": "a57a362da2ccacb77a7f90389ef11de3d7b5e339885f392a4de7b997ae9512db"
+    },
+    {
+      "filename": "3-146033-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-146033-A-13.wav",
+      "sha256": "e667c05eb2138c3ab9423157979c3e1ec0f9b8b5332d0e214299c7604e16238d"
+    },
+    {
+      "filename": "3-149448-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-149448-A-17.wav",
+      "sha256": "3e659284e1dde96035bbf91f0dc06804b32f4b1f5677192d1b753eafe2f37add"
+    },
+    {
+      "filename": "3-154439-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-154439-A-17.wav",
+      "sha256": "ef8f465d02e9e9443a14db84eb7c3fa60840c6336040d1ed3b90ccbaf9c2a3cb"
+    },
+    {
+      "filename": "3-155577-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155577-A-14.wav",
+      "sha256": "962fc83526ff70ac2392023ad032ae0f2f898d609775b438f22a4e3b639cbe7d"
+    },
+    {
+      "filename": "3-155578-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155578-A-14.wav",
+      "sha256": "3203e75865f750f362b9c0b8d8265b4a4332631d8b2d48b5d7e5324f79456fdf"
+    },
+    {
+      "filename": "3-155579-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155579-A-14.wav",
+      "sha256": "001ac631fb996c35e511a732e758e82c123e5a353a547acb05f81e7223c1540e"
+    },
+    {
+      "filename": "3-155583-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155583-A-14.wav",
+      "sha256": "72ba6bac187597092a075357be3de44afb1a27761fb6a1e4cbfa088e2e268f2a"
+    },
+    {
+      "filename": "3-155584-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155584-A-14.wav",
+      "sha256": "f806bf97ee343fdec1eb56fa9347e3ea9a48143282f4b2f8753beb2717ad69ae"
+    },
+    {
+      "filename": "3-155642-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155642-A-11.wav",
+      "sha256": "2b3168d0ece00768528c830841cd6edd683367bfb1ae0da1788912713a8a895d"
+    },
+    {
+      "filename": "3-155642-B-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155642-B-11.wav",
+      "sha256": "76de2c046bd684e4788f852b5c3bc56df90b97660627b197619d156eccd3f306"
+    },
+    {
+      "filename": "3-155766-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-155766-A-13.wav",
+      "sha256": "2095c94cb12f8deed814578138c71802c4c090106149aeee536cf2768a70b9c5"
+    },
+    {
+      "filename": "3-156581-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-156581-A-14.wav",
+      "sha256": "84dcba1ac7493f9b72a7507d92a81b5e8ef680f7f685ba2b7652b0286cefb496"
+    },
+    {
+      "filename": "3-156581-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-156581-B-14.wav",
+      "sha256": "4b12f5ad0034beaac805ebeab9f1fe24e5ca94283deddadf18559481c19b638f"
+    },
+    {
+      "filename": "3-156907-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-156907-A-15.wav",
+      "sha256": "713f2d9acc4ea229c8cc0687e7d3b6282d21f861dedc96ced65cbb2389b0ad7c"
+    },
+    {
+      "filename": "3-157149-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-157149-A-10.wav",
+      "sha256": "83d1a7c62ffbf4f2241775502ec2fe3cf5c32fd69b4c107d8ca66b21d08bcda9"
+    },
+    {
+      "filename": "3-157487-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-157487-A-10.wav",
+      "sha256": "2acadf44d110c13b39bf17d6db9afa13bb4db19c8b3147b1a61b4f492caf1e97"
+    },
+    {
+      "filename": "3-157615-A-10.wav",
+      "category": "rain",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-157615-A-10.wav",
+      "sha256": "5d3ac19904b4f7f0545f20b5a4d31d0cc9d97c5f555efc42b0484b41418052fa"
+    },
+    {
+      "filename": "3-160119-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-160119-A-15.wav",
+      "sha256": "28c8678f97375100236a78fb738110aab8e571400a5c707fdcf5c49e0247e31f"
+    },
+    {
+      "filename": "3-161500-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-161500-A-17.wav",
+      "sha256": "784ac0b121a0e4cde47c7c146872b20d06744bcc28b85e5fc6ed97509f57f30c"
+    },
+    {
+      "filename": "3-162786-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-162786-A-13.wav",
+      "sha256": "b8eb49bd608bd3f525c021689601857a51c1a94f99f75c2e9854e52ff9885c56"
+    },
+    {
+      "filename": "3-163607-A-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-163607-A-13.wav",
+      "sha256": "84a809683296237fe88f185b856ac8f8bc100f5b6c8450af64cb5fb0066b2940"
+    },
+    {
+      "filename": "3-163607-B-13.wav",
+      "category": "crickets",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-163607-B-13.wav",
+      "sha256": "8ab927913468338f081b484410b18ba1f8a82eb438a67234747952a569f89163"
+    },
+    {
+      "filename": "3-164120-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-164120-A-11.wav",
+      "sha256": "adcd03bf5b6a5c220cfbc4382ba6aa6873bedef53d0034a4dc5e2f0f6a183cb4"
+    },
+    {
+      "filename": "3-164592-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-164592-A-15.wav",
+      "sha256": "642600443ae4f0be042ab271af9a88b834648361059a206118398deec5d53873"
+    },
+    {
+      "filename": "3-164593-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-164593-A-15.wav",
+      "sha256": "cb2f3dd439acbba31b4a292f14b12e5d698796235aeab7f857fef3167e463ffd"
+    },
+    {
+      "filename": "3-164594-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-164594-A-15.wav",
+      "sha256": "3f6652e5d3289ca0b2f072a6c449e0b92cdb920130b9b50ec66043ff68d974f7"
+    },
+    {
+      "filename": "3-164595-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-164595-A-15.wav",
+      "sha256": "20079e9c34ffa6a0d6f6474c1a77c79e7e1ccb3cf982f47fc1105a2684f5a1d6"
+    },
+    {
+      "filename": "3-164630-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-164630-A-11.wav",
+      "sha256": "f51da90204e7194f92090de1872a27968ffda90c53fc694ca9d4781233fb6dad"
+    },
+    {
+      "filename": "3-166324-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-166324-A-15.wav",
+      "sha256": "1e17ce0d83924170a27459c99151e7755ac7a325bc9ffde11383ee75e56f7642"
+    },
+    {
+      "filename": "3-166326-A-15.wav",
+      "category": "water_drops",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-166326-A-15.wav",
+      "sha256": "e3c2b5d946738990d8f43dcf6de4beae730a282f8acb5c322a058ec234c1e241"
+    },
+    {
+      "filename": "3-166422-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-166422-A-11.wav",
+      "sha256": "3ecc909c603753417b812b66a4846f3159bf854cc22b695f5018948bd1035fc9"
+    },
+    {
+      "filename": "3-181132-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-181132-A-14.wav",
+      "sha256": "e454897f74f9c366242072e46a8ab4ed788419e0ff0443920bd58c46d9f8d410"
+    },
+    {
+      "filename": "3-187710-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-187710-A-11.wav",
+      "sha256": "97714f535ad104a9eac0b85552f37b97e05b1d18f67223d502d201503b02dbaa"
+    },
+    {
+      "filename": "3-246513-A-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-246513-A-16.wav",
+      "sha256": "ea4351647ba7f248a404e583e525a83b86118c7e7c5f4544f8b1315e84ff7557"
+    },
+    {
+      "filename": "3-246513-B-16.wav",
+      "category": "wind",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-246513-B-16.wav",
+      "sha256": "e0adc1831f31a13f692e123ea4024cbcab64b2191c21ac632700e139206fc351"
+    },
+    {
+      "filename": "3-70962-A-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-70962-A-4.wav",
+      "sha256": "678df375c2e35eebad0f251d1ce6240139a93c87c0ec5ca6c4937b7032477145"
+    },
+    {
+      "filename": "3-70962-B-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-70962-B-4.wav",
+      "sha256": "f102aec2b3c44ae526519dc8f52124be0e7c9a00d5ab5240b0e67744db3f05c4"
+    },
+    {
+      "filename": "3-70962-C-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-70962-C-4.wav",
+      "sha256": "bcb3b0fe85defbcf9ba6e2d59f7fe74d558195ab1c2bb498b819087fb683fcfb"
+    },
+    {
+      "filename": "3-71964-A-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-71964-A-4.wav",
+      "sha256": "7b33225d63d55c2d0a186c4d8ba3b340be281a5be8787165a85bb03c694a1c98"
+    },
+    {
+      "filename": "3-71964-B-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-71964-B-4.wav",
+      "sha256": "4adfb45778a391fbb5e732ec4f816d1fd6c709d81d0a8352e625862981f08507"
+    },
+    {
+      "filename": "3-71964-C-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-71964-C-4.wav",
+      "sha256": "aab6176d922cc933204cd8798d6bee77c35266e70e9c555d3f98232752dff6a2"
+    },
+    {
+      "filename": "3-83527-A-4.wav",
+      "category": "frog",
+      "fold": 3,
+      "path": "datasets/ESC-50/audio/3-83527-A-4.wav",
+      "sha256": "132e40f789fa26bd861af24281ca956470506b1bcd03cb4bea94deb16cffbf71"
+    }
+  ]
+}

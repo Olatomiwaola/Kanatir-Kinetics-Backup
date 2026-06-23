@@ -41,7 +41,7 @@ from kanatir.core.msfe.fused import FUSED_SCHEMA_VERSION, FusedObject
 log = structlog.get_logger("ade")
 
 
-def _build_ensemble() -> AnomalyEnsemble:
+def _build_unfitted_ensemble() -> AnomalyEnsemble:
     baseline = AdaptiveBaseline(
         window=int(os.getenv("ADE_BASELINE_WINDOW", "200")),
         warmup=int(os.getenv("ADE_BASELINE_WARMUP", "30")),
@@ -63,25 +63,41 @@ def main() -> int:
     out_topic = os.getenv("ADE_OUT_TOPIC", "anomalies.raw")
     group = os.getenv("ADE_GROUP", "ade")
 
-    ensemble = _build_ensemble()
+    # ADE_MODEL_PATH — M7/TRL-3 fitted-model path.
+    #   unset  -> M4-compatible: unfitted IsoForest (skipped), baseline+conflict
+    #             only. Logged fitted=false.
+    #   set    -> load the schema-pinned artifact (fit_ade.py output), validate
+    #             feature_names/feature_dim/feature_schema_version EXACTLY, inject
+    #             the fitted detector into a fresh ensemble+baseline. Hard-fail on
+    #             drift (AdeModelIncompatible) — NEVER silently fall back to
+    #             unfitted when a model path was given. M7 gate runs MUST set this.
+    model_path = os.getenv("ADE_MODEL_PATH")
+    if model_path:
+        from kanatir.core.ade.model_io import load_fitted_ensemble
 
-    # M4 GATE — cold-start policy (deliberate, not a gap):
-    # IsolationForest is present and protocol-conformant but NOT fitted at this
-    # gate. Fitting it on synthetic media (ignorance-collapsed FusedObjects with
-    # conflict_k=0.0) would produce a number we can't honestly defend. The
-    # ensemble's ready_detectors check means it is SKIPPED automatically — the
-    # gate runs on the adaptive baseline + conflict_k as the tracked scalar
-    # input, which IS defensible at TRL 3 without a representative corpus.
-    # IsoForest goes live the moment real-media clips produce real feature
-    # distributions — that's the carried-forward real-media demo-capture item.
-    # This is logged at startup so the gate evidence is explicit about it.
-    ready = [d.name for d in ensemble.ready_detectors]
-    log.info(
-        "ade.detector_state",
-        ready=ready if ready else "none - baseline+conflict path only",
-        scaffolded=["lstm_autoencoder", "gnn"],
-        note="IsolationForest unfitted at M4 gate; fits on real-media corpus",
-    )
+        loaded = load_fitted_ensemble(model_path)
+        ensemble = loaded.ensemble
+        ready = [d.name for d in ensemble.ready_detectors]
+        log.info(
+            "ade.start",
+            fitted=True,
+            model_path=model_path,
+            feature_schema=loaded.feature_schema_version,
+            n_samples=loaded.n_samples,
+            corpus_id=loaded.corpus_id,
+            ready=ready,
+            scaffolded=["lstm_autoencoder", "gnn"],
+        )
+    else:
+        ensemble = _build_unfitted_ensemble()
+        ready = [d.name for d in ensemble.ready_detectors]
+        log.info(
+            "ade.start",
+            fitted=False,
+            ready=ready if ready else "none - baseline+conflict path only",
+            scaffolded=["lstm_autoencoder", "gnn"],
+            note="IsolationForest unfitted (M4 cold-start policy); set ADE_MODEL_PATH to fit-load",
+        )
 
     consumer = Consumer({
         "bootstrap.servers": bootstrap,
@@ -101,7 +117,7 @@ def main() -> int:
     signal.signal(signal.SIGINT, _stop)
     signal.signal(signal.SIGTERM, _stop)
 
-    log.info("ade.start", bootstrap=bootstrap, in_topic=in_topic, out_topic=out_topic,
+    log.info("ade.broker", bootstrap=bootstrap, in_topic=in_topic, out_topic=out_topic,
              expects_fused_schema=FUSED_SCHEMA_VERSION)
 
     try:

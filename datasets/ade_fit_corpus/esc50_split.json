@@ -1,0 +1,2609 @@
+{
+  "split_policy": "esc50_fold_based_disjoint",
+  "fit_folds": [
+    1,
+    2,
+    3
+  ],
+  "eval_folds": [
+    4,
+    5
+  ],
+  "ambient_negative_categories": [
+    "rain",
+    "wind",
+    "crickets",
+    "sea_waves",
+    "insects",
+    "chirping_birds",
+    "frog",
+    "water_drops",
+    "pouring_water",
+    "thunderstorm"
+  ],
+  "acoustic_positive_categories": [
+    "helicopter",
+    "siren",
+    "engine",
+    "chainsaw",
+    "airplane",
+    "car_horn",
+    "train"
+  ],
+  "fit_negatives": [
+    {
+      "filename": "1-100038-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-101296-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-101296-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-115521-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-118559-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-12653-A-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-12654-A-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-12654-B-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-137296-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-15689-A-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-15689-B-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-16746-A-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-17367-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-17585-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-17970-A-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-18755-A-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-18755-B-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-18757-A-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-19501-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-21189-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-23094-A-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-23094-B-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-23222-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-23222-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-24524-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-24524-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-24524-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 1
+    },
+    {
+      "filename": "1-26222-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-28135-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-28135-B-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-29532-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-29561-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-31836-A-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-31836-B-4.wav",
+      "category": "frog",
+      "fold": 1
+    },
+    {
+      "filename": "1-34495-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-34497-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-38559-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-38560-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-39901-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-39901-B-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-43760-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-46040-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-46938-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-46938-B-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-47709-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-47714-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-50060-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-50623-A-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-50625-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-50688-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-51035-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-51036-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-51037-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-51433-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-51436-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-54918-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-54918-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 1
+    },
+    {
+      "filename": "1-54958-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-56311-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-57316-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-57318-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-59102-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-61221-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-61252-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-63871-A-10.wav",
+      "category": "rain",
+      "fold": 1
+    },
+    {
+      "filename": "1-65483-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-67152-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-69760-A-16.wav",
+      "category": "wind",
+      "fold": 1
+    },
+    {
+      "filename": "1-73585-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-7456-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-75189-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-79220-A-17.wav",
+      "category": "pouring_water",
+      "fold": 1
+    },
+    {
+      "filename": "1-7973-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-80785-A-7.wav",
+      "category": "insects",
+      "fold": 1
+    },
+    {
+      "filename": "1-80840-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-80841-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "1-90797-A-15.wav",
+      "category": "water_drops",
+      "fold": 1
+    },
+    {
+      "filename": "1-91359-A-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-91359-B-11.wav",
+      "category": "sea_waves",
+      "fold": 1
+    },
+    {
+      "filename": "1-9841-A-13.wav",
+      "category": "crickets",
+      "fold": 1
+    },
+    {
+      "filename": "2-101676-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-A-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-B-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-C-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-D-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-E-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-F-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102414-G-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-102852-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-104105-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-104105-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-104952-A-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-104952-B-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-106019-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-108760-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-108760-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-108761-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-109371-A-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-109371-B-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-109371-C-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-109371-D-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-109374-A-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-110613-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-117625-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-122616-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-124564-A-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-124662-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-125821-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-125875-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-125966-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-126433-A-17.wav",
+      "category": "pouring_water",
+      "fold": 2
+    },
+    {
+      "filename": "2-132157-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-132157-B-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-133863-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-137162-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-139748-A-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-139748-B-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-139749-A-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-155801-A-11.wav",
+      "category": "sea_waves",
+      "fold": 2
+    },
+    {
+      "filename": "2-160128-A-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-205966-A-16.wav",
+      "category": "wind",
+      "fold": 2
+    },
+    {
+      "filename": "2-32515-A-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-32515-B-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-32515-C-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-32515-D-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-32834-A-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-39441-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-39443-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-39443-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-39945-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-39945-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-39945-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 2
+    },
+    {
+      "filename": "2-52085-A-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-52085-B-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-52789-A-4.wav",
+      "category": "frog",
+      "fold": 2
+    },
+    {
+      "filename": "2-64962-A-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-64963-A-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-68595-A-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-68595-B-15.wav",
+      "category": "water_drops",
+      "fold": 2
+    },
+    {
+      "filename": "2-72547-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-72547-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-72547-C-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-72547-D-14.wav",
+      "category": "chirping_birds",
+      "fold": 2
+    },
+    {
+      "filename": "2-72970-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-73027-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-73260-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-80844-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-81731-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-81970-A-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-81970-B-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-81970-C-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-82077-A-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-82367-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-83270-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-85139-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-87781-A-10.wav",
+      "category": "rain",
+      "fold": 2
+    },
+    {
+      "filename": "2-96033-A-13.wav",
+      "category": "crickets",
+      "fold": 2
+    },
+    {
+      "filename": "2-99955-A-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-99955-B-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "2-99955-C-7.wav",
+      "category": "insects",
+      "fold": 2
+    },
+    {
+      "filename": "3-102908-A-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-103050-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-103051-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-103051-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-103051-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-104761-A-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-104761-B-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-105235-A-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-105236-A-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-108451-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-108451-B-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-110913-A-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-110913-B-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-110913-C-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-110913-D-7.wav",
+      "category": "insects",
+      "fold": 3
+    },
+    {
+      "filename": "3-117504-A-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-117504-B-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-123224-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-124600-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-127874-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-129338-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-129678-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-132852-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-134699-A-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-134699-B-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-134699-C-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-134802-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-136608-A-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-140774-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-142005-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-142006-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-142349-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-143929-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-144827-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-144827-B-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-144891-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-144891-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 3
+    },
+    {
+      "filename": "3-145719-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-146033-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-149448-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-154439-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-155577-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-155578-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-155579-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-155583-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-155584-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-155642-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-155642-B-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-155766-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-156581-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-156581-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-156907-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-157149-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-157487-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-157615-A-10.wav",
+      "category": "rain",
+      "fold": 3
+    },
+    {
+      "filename": "3-160119-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-161500-A-17.wav",
+      "category": "pouring_water",
+      "fold": 3
+    },
+    {
+      "filename": "3-162786-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-163607-A-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-163607-B-13.wav",
+      "category": "crickets",
+      "fold": 3
+    },
+    {
+      "filename": "3-164120-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-164592-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-164593-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-164594-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-164595-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-164630-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-166324-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-166326-A-15.wav",
+      "category": "water_drops",
+      "fold": 3
+    },
+    {
+      "filename": "3-166422-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-181132-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 3
+    },
+    {
+      "filename": "3-187710-A-11.wav",
+      "category": "sea_waves",
+      "fold": 3
+    },
+    {
+      "filename": "3-246513-A-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-246513-B-16.wav",
+      "category": "wind",
+      "fold": 3
+    },
+    {
+      "filename": "3-70962-A-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-70962-B-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-70962-C-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-71964-A-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-71964-B-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-71964-C-4.wav",
+      "category": "frog",
+      "fold": 3
+    },
+    {
+      "filename": "3-83527-A-4.wav",
+      "category": "frog",
+      "fold": 3
+    }
+  ],
+  "eval_negatives": [
+    {
+      "filename": "4-125070-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-125071-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-125072-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-125072-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-130584-A-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-130891-A-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-133895-A-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-143118-A-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-143118-B-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-144083-A-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-144083-B-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-144083-C-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-144085-A-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-154793-A-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-156993-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-159609-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-159609-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-160999-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-161127-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-161519-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-163264-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-163606-A-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-163608-B-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-163609-A-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-163609-B-16.wav",
+      "category": "wind",
+      "fold": 4
+    },
+    {
+      "filename": "4-163697-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-164206-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-165813-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-165813-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 4
+    },
+    {
+      "filename": "4-166661-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-167063-A-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-167063-B-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-167063-C-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-168155-A-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-168868-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-171823-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-172143-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-172377-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-174797-A-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-177250-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-180380-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-180453-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-181286-A-10.wav",
+      "category": "rain",
+      "fold": 4
+    },
+    {
+      "filename": "4-181362-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-181628-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-182314-A-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-182314-B-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-182613-A-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-182613-B-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-182795-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-182839-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-186693-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-187504-A-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-187504-B-17.wav",
+      "category": "pouring_water",
+      "fold": 4
+    },
+    {
+      "filename": "4-187769-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-187769-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-188293-A-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-188293-B-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-191246-A-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-191246-B-7.wav",
+      "category": "insects",
+      "fold": 4
+    },
+    {
+      "filename": "4-194246-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-195497-A-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-195497-B-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-195707-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-195805-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-197871-A-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-202749-A-13.wav",
+      "category": "crickets",
+      "fold": 4
+    },
+    {
+      "filename": "4-204618-A-11.wav",
+      "category": "sea_waves",
+      "fold": 4
+    },
+    {
+      "filename": "4-212604-A-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-212604-B-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-212604-C-15.wav",
+      "category": "water_drops",
+      "fold": 4
+    },
+    {
+      "filename": "4-216211-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-223125-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-223127-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 4
+    },
+    {
+      "filename": "4-99193-A-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-99193-B-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-99644-A-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-99644-B-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-99644-C-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "4-99644-D-4.wav",
+      "category": "frog",
+      "fold": 4
+    },
+    {
+      "filename": "5-117773-A-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-156026-A-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-156026-B-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-156026-C-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-156026-D-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-156999-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-156999-B-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-156999-C-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-156999-D-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-156999-E-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-157204-A-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-157204-B-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-179496-A-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-179496-B-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-181766-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-187201-A-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-187201-B-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-188495-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-188655-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-189795-A-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-192191-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-193339-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-194892-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-194932-A-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-195517-A-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-195518-A-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-195557-A-19.wav",
+      "category": "thunderstorm",
+      "fold": 5
+    },
+    {
+      "filename": "5-195710-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-197446-A-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-198278-A-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-198278-B-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-198278-C-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-198321-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-200461-A-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-200461-B-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-202898-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-203739-A-10.wav",
+      "category": "rain",
+      "fold": 5
+    },
+    {
+      "filename": "5-204352-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-204352-B-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-205589-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-205589-B-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-207781-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-208810-A-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-208810-B-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-210540-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-212730-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-212734-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-212736-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-213077-A-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-214362-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-215172-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-215179-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-215634-A-17.wav",
+      "category": "pouring_water",
+      "fold": 5
+    },
+    {
+      "filename": "5-216213-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-216214-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-216216-A-13.wav",
+      "category": "crickets",
+      "fold": 5
+    },
+    {
+      "filename": "5-217186-A-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-217186-B-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-217186-C-16.wav",
+      "category": "wind",
+      "fold": 5
+    },
+    {
+      "filename": "5-219379-A-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-219379-B-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-219379-C-11.wav",
+      "category": "sea_waves",
+      "fold": 5
+    },
+    {
+      "filename": "5-233787-A-7.wav",
+      "category": "insects",
+      "fold": 5
+    },
+    {
+      "filename": "5-237499-A-4.wav",
+      "category": "frog",
+      "fold": 5
+    },
+    {
+      "filename": "5-241846-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-242490-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-242491-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-243448-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-243449-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-243450-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-243459-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-243459-B-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-254832-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-254832-B-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-257349-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-257839-A-14.wav",
+      "category": "chirping_birds",
+      "fold": 5
+    },
+    {
+      "filename": "5-259180-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-261433-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-261439-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    },
+    {
+      "filename": "5-262641-A-15.wav",
+      "category": "water_drops",
+      "fold": 5
+    }
+  ],
+  "eval_positives": [
+    {
+      "filename": "4-102871-A-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-111671-A-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-111671-B-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-121532-A-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-125929-A-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-149294-A-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-149294-B-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-157611-A-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-157611-B-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-161099-A-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-161099-B-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-161100-A-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-161103-A-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-161105-A-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-161105-B-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-161579-A-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-161579-B-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-165606-A-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-165791-A-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-165791-B-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-165823-A-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-165823-B-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-165845-A-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-165845-B-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-165933-A-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-168446-A-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-169127-A-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-169127-B-41.wav",
+      "category": "chainsaw",
+      "fold": 4
+    },
+    {
+      "filename": "4-171652-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-175000-A-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-175000-B-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-175000-C-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-175845-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-175846-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-175855-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-175856-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-176631-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-176638-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-178402-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-178881-A-45.wav",
+      "category": "train",
+      "fold": 4
+    },
+    {
+      "filename": "4-186935-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-186936-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-186938-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-186940-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-186962-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-191015-A-43.wav",
+      "category": "car_horn",
+      "fold": 4
+    },
+    {
+      "filename": "4-193480-A-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-193480-B-40.wav",
+      "category": "helicopter",
+      "fold": 4
+    },
+    {
+      "filename": "4-195451-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-201988-A-44.wav",
+      "category": "engine",
+      "fold": 4
+    },
+    {
+      "filename": "4-251959-A-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-255371-A-47.wav",
+      "category": "airplane",
+      "fold": 4
+    },
+    {
+      "filename": "4-67358-A-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-80761-A-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-90014-A-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "4-90014-B-42.wav",
+      "category": "siren",
+      "fold": 4
+    },
+    {
+      "filename": "5-117118-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-117120-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-117122-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-133989-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-133989-B-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-150409-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-160551-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-170338-A-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-170338-B-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-171653-A-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-177957-A-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-177957-B-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-177957-C-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-177957-D-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-177957-E-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-179860-A-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-179863-A-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-179865-A-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-179866-A-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-179868-A-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-180156-A-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-180156-B-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-180156-C-43.wav",
+      "category": "car_horn",
+      "fold": 5
+    },
+    {
+      "filename": "5-184323-A-42.wav",
+      "category": "siren",
+      "fold": 5
+    },
+    {
+      "filename": "5-185579-A-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-185579-B-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-188796-A-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-188945-A-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-191131-A-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-197118-A-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-197121-A-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-197121-B-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-198600-A-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-199284-A-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-199284-B-45.wav",
+      "category": "train",
+      "fold": 5
+    },
+    {
+      "filename": "5-205898-A-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-209992-A-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-209992-B-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-215445-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-215447-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-215449-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-216370-A-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-216370-B-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-220955-A-40.wav",
+      "category": "helicopter",
+      "fold": 5
+    },
+    {
+      "filename": "5-222524-A-41.wav",
+      "category": "chainsaw",
+      "fold": 5
+    },
+    {
+      "filename": "5-232272-A-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-235507-A-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-235956-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-240671-A-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-243773-A-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-243773-B-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-243783-A-44.wav",
+      "category": "engine",
+      "fold": 5
+    },
+    {
+      "filename": "5-251957-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-251962-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-251963-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    },
+    {
+      "filename": "5-251971-A-47.wav",
+      "category": "airplane",
+      "fold": 5
+    }
+  ],
+  "counts": {
+    "fit_negatives": 240,
+    "eval_negatives": 160,
+    "eval_positives": 112
+  },
+  "role_hashes": {
+    "fit_negatives": "sha256:efe944971e77883f1c5d8f2e0be29a1e",
+    "eval_negatives": "sha256:b65c8fef145a0cc3ece38e35f10417e6",
+    "eval_positives": "sha256:efef60c9d5045589cbe1835652e1ebbe"
+  }
+}

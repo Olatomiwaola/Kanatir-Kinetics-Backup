@@ -46,6 +46,11 @@ if TYPE_CHECKING:
 #   5     : confidence  (== belief.top_confidence, the winning specific mass)
 #   6     : n_modalities (how many distinct sensor types agreed to this object)
 #   7     : belief entropy over the full mass assignment (spread of belief)
+
+# Bump this on any change to FEATURE_NAMES / FEATURE_DIM. The ADE model artifact
+# pins this value; ADE startup hard-fails if a loaded model's version != this.
+FEATURE_SCHEMA_VERSION = "1.0.0"
+
 FEATURE_NAMES: tuple[str, ...] = (
     *(f"mass_{h}" for h in HYPOTHESES),
     f"mass_{UNKNOWN}",
