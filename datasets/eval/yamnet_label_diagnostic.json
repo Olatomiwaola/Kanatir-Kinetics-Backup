@@ -1,0 +1,1248 @@
+[
+  {
+    "category": "siren",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Emergency vehicle",
+        "n": 1,
+        "mean": 0.7744,
+        "max": 0.7744
+      },
+      {
+        "label": "Police car (siren)",
+        "n": 2,
+        "mean": 0.755,
+        "max": 0.8131
+      },
+      {
+        "label": "Siren",
+        "n": 4,
+        "mean": 0.6486,
+        "max": 0.7313
+      },
+      {
+        "label": "Motor vehicle (road)",
+        "n": 1,
+        "mean": 0.6451,
+        "max": 0.6451
+      },
+      {
+        "label": "Alarm",
+        "n": 3,
+        "mean": 0.6252,
+        "max": 0.7606
+      },
+      {
+        "label": "Civil defense siren",
+        "n": 1,
+        "mean": 0.436,
+        "max": 0.436
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-102871-A-42.wav",
+        "top3": [
+          [
+            "Emergency vehicle",
+            0.7743706703186035
+          ],
+          [
+            "Siren",
+            0.6845630407333374
+          ],
+          [
+            "Motor vehicle (road)",
+            0.6451206803321838
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-111671-A-42.wav",
+        "top3": [
+          [
+            "Alarm",
+            0.7605722546577454
+          ],
+          [
+            "Siren",
+            0.7313319444656372
+          ],
+          [
+            "Police car (siren)",
+            0.6968246698379517
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "4-111671-B-42.wav",
+        "top3": [
+          [
+            "Police car (siren)",
+            0.8130804896354675
+          ],
+          [
+            "Siren",
+            0.5853390693664551
+          ],
+          [
+            "Alarm",
+            0.5134845972061157
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-121532-A-42.wav",
+        "top3": [
+          [
+            "Alarm",
+            0.6016060709953308
+          ],
+          [
+            "Siren",
+            0.5932677984237671
+          ],
+          [
+            "Civil defense siren",
+            0.43602555990219116
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      }
+    ]
+  },
+  {
+    "category": "car_horn",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Silence",
+        "n": 2,
+        "mean": 0.4313,
+        "max": 0.4589
+      },
+      {
+        "label": "Vehicle",
+        "n": 3,
+        "mean": 0.3459,
+        "max": 0.5004
+      },
+      {
+        "label": "Vehicle horn, car horn, honking",
+        "n": 3,
+        "mean": 0.324,
+        "max": 0.3775
+      },
+      {
+        "label": "Toot",
+        "n": 3,
+        "mean": 0.2228,
+        "max": 0.3091
+      },
+      {
+        "label": "Motor vehicle (road)",
+        "n": 1,
+        "mean": 0.2036,
+        "max": 0.2036
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-175845-A-43.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.5004394054412842
+          ],
+          [
+            "Motor vehicle (road)",
+            0.20364801585674286
+          ],
+          [
+            "Toot",
+            0.18433375656604767
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-175846-A-43.wav",
+        "top3": [
+          [
+            "Silence",
+            0.40361422300338745
+          ],
+          [
+            "Vehicle horn, car horn, honking",
+            0.3774782121181488
+          ],
+          [
+            "Vehicle",
+            0.14875420928001404
+          ]
+        ],
+        "current_hyp": "AMBIENT"
+      },
+      {
+        "clip": "4-175855-A-43.wav",
+        "top3": [
+          [
+            "Silence",
+            0.4589024484157562
+          ],
+          [
+            "Vehicle horn, car horn, honking",
+            0.2563779950141907
+          ],
+          [
+            "Toot",
+            0.17486415803432465
+          ]
+        ],
+        "current_hyp": "AMBIENT"
+      },
+      {
+        "clip": "4-175856-A-43.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.388597309589386
+          ],
+          [
+            "Vehicle horn, car horn, honking",
+            0.3381238877773285
+          ],
+          [
+            "Toot",
+            0.30906468629837036
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  },
+  {
+    "category": "chainsaw",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Vehicle",
+        "n": 3,
+        "mean": 0.5379,
+        "max": 0.7147
+      },
+      {
+        "label": "Motor vehicle (road)",
+        "n": 2,
+        "mean": 0.1895,
+        "max": 0.2343
+      },
+      {
+        "label": "Car",
+        "n": 2,
+        "mean": 0.1663,
+        "max": 0.1933
+      },
+      {
+        "label": "Chant",
+        "n": 1,
+        "mean": 0.1497,
+        "max": 0.1497
+      },
+      {
+        "label": "Motorboat, speedboat",
+        "n": 1,
+        "mean": 0.1496,
+        "max": 0.1496
+      },
+      {
+        "label": "Boat, Water vehicle",
+        "n": 1,
+        "mean": 0.1255,
+        "max": 0.1255
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-149294-A-41.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.3999595046043396
+          ],
+          [
+            "Motor vehicle (road)",
+            0.14471976459026337
+          ],
+          [
+            "Car",
+            0.1393204778432846
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-149294-B-41.wav",
+        "top3": [
+          [
+            "Chant",
+            0.14965279400348663
+          ],
+          [
+            "Mantra",
+            0.09919659793376923
+          ],
+          [
+            "Music",
+            0.08703897893428802
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "4-157611-A-41.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.7147228121757507
+          ],
+          [
+            "Motor vehicle (road)",
+            0.23429234325885773
+          ],
+          [
+            "Car",
+            0.19325563311576843
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-157611-B-41.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.4989156126976013
+          ],
+          [
+            "Motorboat, speedboat",
+            0.1495857536792755
+          ],
+          [
+            "Boat, Water vehicle",
+            0.12554354965686798
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  },
+  {
+    "category": "train",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Vehicle",
+        "n": 4,
+        "mean": 0.4868,
+        "max": 0.6956
+      },
+      {
+        "label": "Rail transport",
+        "n": 4,
+        "mean": 0.4609,
+        "max": 0.7168
+      },
+      {
+        "label": "Train",
+        "n": 4,
+        "mean": 0.442,
+        "max": 0.6909
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-165606-A-45.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.46487411856651306
+          ],
+          [
+            "Rail transport",
+            0.3254640996456146
+          ],
+          [
+            "Train",
+            0.3050013482570648
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-165791-A-45.wav",
+        "top3": [
+          [
+            "Rail transport",
+            0.7168279886245728
+          ],
+          [
+            "Vehicle",
+            0.6956261396408081
+          ],
+          [
+            "Train",
+            0.6909105777740479
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "4-165791-B-45.wav",
+        "top3": [
+          [
+            "Rail transport",
+            0.5628501176834106
+          ],
+          [
+            "Train",
+            0.541023313999176
+          ],
+          [
+            "Vehicle",
+            0.4890359938144684
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "4-165845-A-45.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.29762569069862366
+          ],
+          [
+            "Rail transport",
+            0.2383531779050827
+          ],
+          [
+            "Train",
+            0.23086710274219513
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  },
+  {
+    "category": "helicopter",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Vehicle",
+        "n": 4,
+        "mean": 0.548,
+        "max": 0.8945
+      },
+      {
+        "label": "Silence",
+        "n": 1,
+        "mean": 0.5027,
+        "max": 0.5027
+      },
+      {
+        "label": "Helicopter",
+        "n": 2,
+        "mean": 0.2549,
+        "max": 0.2802
+      },
+      {
+        "label": "Aircraft",
+        "n": 2,
+        "mean": 0.1937,
+        "max": 0.2211
+      },
+      {
+        "label": "Motor vehicle (road)",
+        "n": 2,
+        "mean": 0.1217,
+        "max": 0.1574
+      },
+      {
+        "label": "Engine",
+        "n": 1,
+        "mean": 0.0913,
+        "max": 0.0913
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-125929-A-40.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.49121809005737305
+          ],
+          [
+            "Engine",
+            0.09130489826202393
+          ],
+          [
+            "Motor vehicle (road)",
+            0.08605839312076569
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-161579-A-40.wav",
+        "top3": [
+          [
+            "Silence",
+            0.5027376413345337
+          ],
+          [
+            "Vehicle",
+            0.3188633322715759
+          ],
+          [
+            "Motor vehicle (road)",
+            0.1574091613292694
+          ]
+        ],
+        "current_hyp": "AMBIENT"
+      },
+      {
+        "clip": "4-161579-B-40.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.8945077061653137
+          ],
+          [
+            "Helicopter",
+            0.22964031994342804
+          ],
+          [
+            "Aircraft",
+            0.22106070816516876
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-175000-A-40.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.48744329810142517
+          ],
+          [
+            "Helicopter",
+            0.2802354693412781
+          ],
+          [
+            "Aircraft",
+            0.16629420220851898
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  },
+  {
+    "category": "airplane",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Vehicle",
+        "n": 4,
+        "mean": 0.7343,
+        "max": 0.9418
+      },
+      {
+        "label": "Helicopter",
+        "n": 1,
+        "mean": 0.4952,
+        "max": 0.4952
+      },
+      {
+        "label": "Aircraft",
+        "n": 4,
+        "mean": 0.4669,
+        "max": 0.6743
+      },
+      {
+        "label": "Fixed-wing aircraft, airplane",
+        "n": 2,
+        "mean": 0.3128,
+        "max": 0.4738
+      },
+      {
+        "label": "Aircraft engine",
+        "n": 1,
+        "mean": 0.1991,
+        "max": 0.1991
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-161099-A-47.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.5117188096046448
+          ],
+          [
+            "Aircraft",
+            0.2751922011375427
+          ],
+          [
+            "Fixed-wing aircraft, airplane",
+            0.15172088146209717
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-161099-B-47.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.9080405235290527
+          ],
+          [
+            "Aircraft",
+            0.6742630004882812
+          ],
+          [
+            "Fixed-wing aircraft, airplane",
+            0.4737966060638428
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-161100-A-47.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.5758100152015686
+          ],
+          [
+            "Aircraft",
+            0.36559218168258667
+          ],
+          [
+            "Aircraft engine",
+            0.19909265637397766
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-161103-A-47.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.941806972026825
+          ],
+          [
+            "Aircraft",
+            0.5527082681655884
+          ],
+          [
+            "Helicopter",
+            0.4952273368835449
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  },
+  {
+    "category": "engine",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Chainsaw",
+        "n": 1,
+        "mean": 0.8662,
+        "max": 0.8662
+      },
+      {
+        "label": "Light engine (high frequency)",
+        "n": 1,
+        "mean": 0.8398,
+        "max": 0.8398
+      },
+      {
+        "label": "Engine",
+        "n": 4,
+        "mean": 0.437,
+        "max": 0.6329
+      },
+      {
+        "label": "Silence",
+        "n": 2,
+        "mean": 0.3005,
+        "max": 0.4001
+      },
+      {
+        "label": "Idling",
+        "n": 2,
+        "mean": 0.2768,
+        "max": 0.3646
+      },
+      {
+        "label": "Vibration",
+        "n": 1,
+        "mean": 0.2678,
+        "max": 0.2678
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "4-171652-A-44.wav",
+        "top3": [
+          [
+            "Chainsaw",
+            0.8662327527999878
+          ],
+          [
+            "Light engine (high frequency)",
+            0.8398104906082153
+          ],
+          [
+            "Engine",
+            0.6328703165054321
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "4-186935-A-44.wav",
+        "top3": [
+          [
+            "Engine",
+            0.43098193407058716
+          ],
+          [
+            "Silence",
+            0.2009020298719406
+          ],
+          [
+            "Idling",
+            0.18889465928077698
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-186936-A-44.wav",
+        "top3": [
+          [
+            "Engine",
+            0.4883505702018738
+          ],
+          [
+            "Idling",
+            0.36461812257766724
+          ],
+          [
+            "Vibration",
+            0.2677615284919739
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "4-186938-A-44.wav",
+        "top3": [
+          [
+            "Silence",
+            0.4001142382621765
+          ],
+          [
+            "Vehicle",
+            0.20757706463336945
+          ],
+          [
+            "Engine",
+            0.19567464292049408
+          ]
+        ],
+        "current_hyp": "AMBIENT"
+      }
+    ]
+  },
+  {
+    "category": "rain",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Water",
+        "n": 3,
+        "mean": 0.7144,
+        "max": 0.7662
+      },
+      {
+        "label": "Rain",
+        "n": 3,
+        "mean": 0.5731,
+        "max": 0.6046
+      },
+      {
+        "label": "Vehicle",
+        "n": 1,
+        "mean": 0.4511,
+        "max": 0.4511
+      },
+      {
+        "label": "Rain on surface",
+        "n": 3,
+        "mean": 0.4033,
+        "max": 0.4883
+      },
+      {
+        "label": "Engine",
+        "n": 1,
+        "mean": 0.1194,
+        "max": 0.1194
+      },
+      {
+        "label": "Motor vehicle (road)",
+        "n": 1,
+        "mean": 0.0559,
+        "max": 0.0559
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "1-17367-A-10.wav",
+        "top3": [
+          [
+            "Water",
+            0.7662304043769836
+          ],
+          [
+            "Rain",
+            0.6046448945999146
+          ],
+          [
+            "Rain on surface",
+            0.41101282835006714
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-21189-A-10.wav",
+        "top3": [
+          [
+            "Water",
+            0.7558446526527405
+          ],
+          [
+            "Rain",
+            0.5962833166122437
+          ],
+          [
+            "Rain on surface",
+            0.4882914423942566
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-26222-A-10.wav",
+        "top3": [
+          [
+            "Water",
+            0.6212331652641296
+          ],
+          [
+            "Rain",
+            0.5183420181274414
+          ],
+          [
+            "Rain on surface",
+            0.31069818139076233
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-29561-A-10.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.45108380913734436
+          ],
+          [
+            "Engine",
+            0.11939257383346558
+          ],
+          [
+            "Motor vehicle (road)",
+            0.05594479292631149
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  },
+  {
+    "category": "wind",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Thunderstorm",
+        "n": 1,
+        "mean": 0.5055,
+        "max": 0.5055
+      },
+      {
+        "label": "Thunder",
+        "n": 1,
+        "mean": 0.4676,
+        "max": 0.4676
+      },
+      {
+        "label": "Vehicle",
+        "n": 2,
+        "mean": 0.352,
+        "max": 0.4631
+      },
+      {
+        "label": "Wind",
+        "n": 2,
+        "mean": 0.292,
+        "max": 0.3572
+      },
+      {
+        "label": "Wind noise (microphone)",
+        "n": 2,
+        "mean": 0.2826,
+        "max": 0.3329
+      },
+      {
+        "label": "Eruption",
+        "n": 1,
+        "mean": 0.246,
+        "max": 0.246
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "1-137296-A-16.wav",
+        "top3": [
+          [
+            "Thunderstorm",
+            0.505492091178894
+          ],
+          [
+            "Thunder",
+            0.467592716217041
+          ],
+          [
+            "White noise",
+            0.20259185135364532
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-29532-A-16.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.4631107449531555
+          ],
+          [
+            "Aircraft",
+            0.1899491846561432
+          ],
+          [
+            "Rail transport",
+            0.16592739522457123
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "1-47709-A-16.wav",
+        "top3": [
+          [
+            "Wind",
+            0.3572383522987366
+          ],
+          [
+            "Wind noise (microphone)",
+            0.33288469910621643
+          ],
+          [
+            "Vehicle",
+            0.24081456661224365
+          ]
+        ],
+        "current_hyp": "AMBIENT"
+      },
+      {
+        "clip": "1-47714-A-16.wav",
+        "top3": [
+          [
+            "Eruption",
+            0.24599365890026093
+          ],
+          [
+            "Wind noise (microphone)",
+            0.23237943649291992
+          ],
+          [
+            "Wind",
+            0.22683629393577576
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      }
+    ]
+  },
+  {
+    "category": "crickets",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Rattle (instrument)",
+        "n": 1,
+        "mean": 0.6285,
+        "max": 0.6285
+      },
+      {
+        "label": "Wild animals",
+        "n": 1,
+        "mean": 0.5866,
+        "max": 0.5866
+      },
+      {
+        "label": "Animal",
+        "n": 2,
+        "mean": 0.4333,
+        "max": 0.6203
+      },
+      {
+        "label": "Rattle",
+        "n": 2,
+        "mean": 0.3961,
+        "max": 0.527
+      },
+      {
+        "label": "Snake",
+        "n": 2,
+        "mean": 0.391,
+        "max": 0.3925
+      },
+      {
+        "label": "Insect",
+        "n": 2,
+        "mean": 0.3891,
+        "max": 0.6274
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "1-57316-A-13.wav",
+        "top3": [
+          [
+            "Rattle (instrument)",
+            0.6285492181777954
+          ],
+          [
+            "Rattle",
+            0.5270290374755859
+          ],
+          [
+            "Snake",
+            0.3896016776561737
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-57318-A-13.wav",
+        "top3": [
+          [
+            "Snake",
+            0.3924923539161682
+          ],
+          [
+            "Rattle",
+            0.26514846086502075
+          ],
+          [
+            "Animal",
+            0.24636411666870117
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-59102-A-13.wav",
+        "top3": [
+          [
+            "Insect",
+            0.627358078956604
+          ],
+          [
+            "Animal",
+            0.6203146576881409
+          ],
+          [
+            "Wild animals",
+            0.5866443514823914
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-65483-A-13.wav",
+        "top3": [
+          [
+            "Outside, rural or natural",
+            0.24632346630096436
+          ],
+          [
+            "Insect",
+            0.15081153810024261
+          ],
+          [
+            "Cricket",
+            0.1370314210653305
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      }
+    ]
+  },
+  {
+    "category": "sea_waves",
+    "n_clips": 4,
+    "top_labels_observed": [
+      {
+        "label": "Ocean",
+        "n": 2,
+        "mean": 0.737,
+        "max": 0.8197
+      },
+      {
+        "label": "Water",
+        "n": 2,
+        "mean": 0.7224,
+        "max": 0.7813
+      },
+      {
+        "label": "Waves, surf",
+        "n": 2,
+        "mean": 0.6814,
+        "max": 0.7738
+      },
+      {
+        "label": "Boat, Water vehicle",
+        "n": 2,
+        "mean": 0.5804,
+        "max": 0.6678
+      },
+      {
+        "label": "Vehicle",
+        "n": 2,
+        "mean": 0.5051,
+        "max": 0.5481
+      },
+      {
+        "label": "Rowboat, canoe, kayak",
+        "n": 2,
+        "mean": 0.4975,
+        "max": 0.6379
+      }
+    ],
+    "per_clip": [
+      {
+        "clip": "1-28135-A-11.wav",
+        "top3": [
+          [
+            "Ocean",
+            0.8196513056755066
+          ],
+          [
+            "Water",
+            0.7813181281089783
+          ],
+          [
+            "Waves, surf",
+            0.7738199830055237
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-28135-B-11.wav",
+        "top3": [
+          [
+            "Water",
+            0.6634456515312195
+          ],
+          [
+            "Ocean",
+            0.6542977094650269
+          ],
+          [
+            "Waves, surf",
+            0.589023232460022
+          ]
+        ],
+        "current_hyp": "UNKNOWN(vacuous)"
+      },
+      {
+        "clip": "1-39901-A-11.wav",
+        "top3": [
+          [
+            "Boat, Water vehicle",
+            0.6677668690681458
+          ],
+          [
+            "Rowboat, canoe, kayak",
+            0.6378741264343262
+          ],
+          [
+            "Vehicle",
+            0.46218982338905334
+          ]
+        ],
+        "current_hyp": "GROUND"
+      },
+      {
+        "clip": "1-39901-B-11.wav",
+        "top3": [
+          [
+            "Vehicle",
+            0.5480818748474121
+          ],
+          [
+            "Boat, Water vehicle",
+            0.49297070503234863
+          ],
+          [
+            "Rowboat, canoe, kayak",
+            0.35717910528182983
+          ]
+        ],
+        "current_hyp": "GROUND"
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "eval_run_id": "m7eval_20260624T114536Z_6425b0",
+  "split_policy": "esc50_fold_based_disjoint",
+  "eval_folds": [
+    4,
+    5
+  ],
+  "sampling": {
+    "balanced_n": 12,
+    "sample_seed": 42,
+    "limit": null,
+    "n_positive_scored": 6,
+    "n_negative_scored": 6
+  },
+  "n_clips_scored": 12,
+  "prewarm": {
+    "prewarm_n": 40,
+    "prewarm_folds": [
+      1
+    ],
+    "prewarm_categories": [
+      "chirping_birds",
+      "frog",
+      "insects",
+      "pouring_water",
+      "rain",
+      "sea_waves",
+      "thunderstorm",
+      "water_drops",
+      "wind"
+    ],
+    "prewarm_start_ts": 1782301538.612754,
+    "prewarm_end_ts": 1782301999.804939,
+    "baseline_active_observed": true
+  },
+  "confusion": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 6,
+    "FN": 6
+  },
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "fpr": 0.0,
+  "latency_s": {
+    "n_with_alert": 0,
+    "max": null,
+    "p95": null
+  },
+  "thresholds": {
+    "f1_min": 0.75,
+    "fpr_max": 0.15,
+    "latency_max_s": 5.0
+  },
+  "pass_fail": {
+    "f1": "FAIL",
+    "fpr": "PASS",
+    "latency": "N/A"
+  },
+  "margins": {
+    "pre_s": 1.0,
+    "post_s": 14.0
+  },
+  "inter_clip_gap_s": 20.0,
+  "csat_dedup_window_s": 5.0,
+  "alerts_shared_across_clips": [],
+  "generated_at": "2026-06-24T11:59:45.737821+00:00"
+}
