@@ -108,9 +108,56 @@ class AcousticFeatures(BaseModel):
     mfcc_mean: list[float] = Field(default_factory=list)
 
 
+class RFFeatures(BaseModel):
+    """
+    Passive RF / Wi-Fi-BLE device-presence features for one observation window.
+
+    SCOPE (TRL 3->4 block): passive device-presence and emission-anomaly sensing
+    only. No payload capture, no drone RF control-link classification, no
+    SIGINT-grade detection claim. All identifiers are HMAC-hashed with a
+    rotating salt UPSTREAM in the RAP privacy scrub before any feature is
+    derived; only the aggregate, derived quantities below ever reach this
+    payload. No raw identifiers, no payload bytes, ever travel in an envelope
+    (envelope design rule: "No raw PII ever travels in an envelope").
+
+    `emission_anomaly_score` is deliberately ABSENT in v1.0.0: ADE owns anomaly
+    scoring. This payload carries derived observations, not an anomaly verdict.
+
+    Fields:
+      window_s             observation window length (s)
+      band                 capture band label, free string for v1.0.0,
+                           e.g. "wifi_2g4", "wifi_5g", "ble", "sdr_900",
+                           "sdr_2g4". Not constrained to an enum yet — RF capture
+                           modes are not all stable; constraining now would force
+                           premature schema churn.
+      emitter_count        distinct hashed emitters seen in the window
+      new_emitter_rate     emitters first-seen this window / s
+      unknown_emitter_rate emitters not in the rolling known-set / s
+      rssi_mean            mean RSSI over observed emissions (dBm)
+      rssi_variance        RSSI variance (dBm^2), >= 0
+      channel_occupancy    fraction of the window the channel was busy, [0, 1]
+      probe_density        probe/discovery requests / s
+      burst_rate           emission bursts / s
+    """
+
+    modality: Literal[Modality.RF] = Modality.RF
+    window_s: float = Field(gt=0.0)
+    band: str
+    emitter_count: int = Field(ge=0)
+    new_emitter_rate: float = Field(ge=0.0)
+    unknown_emitter_rate: float = Field(ge=0.0)
+    rssi_mean: float
+    rssi_variance: float = Field(ge=0.0)
+    channel_occupancy: float = Field(ge=0.0, le=1.0)
+    probe_density: float = Field(ge=0.0)
+    burst_rate: float = Field(ge=0.0)
+
+
 # Discriminated union: pydantic picks the model by the `modality` field.
+# RF is an ADDITIVE member under the pre-existing Modality.RF contract; existing
+# video/acoustic envelopes remain schema-compatible, so no SCHEMA_VERSION bump.
 FeaturePayload = Annotated[
-    VideoFeatures | AcousticFeatures,
+    VideoFeatures | AcousticFeatures | RFFeatures,
     Field(discriminator="modality"),
 ]
 
