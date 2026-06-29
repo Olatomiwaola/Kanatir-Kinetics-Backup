@@ -19,3 +19,4 @@ test.wav
 data/.DS_Store # stop tracking .DS_Store
 datasets/ade_fit_corpus/*.wav
 datasets/eval/*.wav
+datasets/
