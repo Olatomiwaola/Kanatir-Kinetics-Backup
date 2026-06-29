@@ -18,16 +18,22 @@ from __future__ import annotations
 from collections.abc import Iterable
 from datetime import datetime, timedelta
 
+from kanatir.core.msfe.acoustic_meta import acoustic_meta_from_yamnet
 from kanatir.core.msfe.dempster_shafer import combine_all
 from kanatir.core.msfe.evidence import envelope_to_mass
 from kanatir.core.msfe.fused import (
     HYPOTHESES,
     UNKNOWN,
+    AcousticMeta,
     BeliefMass,
     Contributor,
     FusedObject,
 )
-from kanatir.pipelines.common.envelope import FeatureEnvelope, GeoRef
+from kanatir.pipelines.common.envelope import (
+    AcousticFeatures,
+    FeatureEnvelope,
+    GeoRef,
+)
 
 # Default correlation window. Two envelopes are co-windowed if their correlation
 # timestamps fall within this span. Tunable per deployment.
@@ -79,6 +85,44 @@ def _belief_from(envelopes: list[FeatureEnvelope]) -> BeliefMass:
     return BeliefMass(masses=full, conflict_k=k)
 
 
+def _acoustic_meta_for(envelopes: list[FeatureEnvelope]) -> AcousticMeta | None:
+    """
+    Derive AcousticMeta for a correlated group, or None if no acoustic envelope
+    contributed. M9 (TRL 3->4): carries YAMNet distinctiveness onto the fused
+    object PAST the D-S mass collapse, via the same acoustic_meta_from_yamnet
+    helper the fit corpus is built through — so the live serve path and the fit
+    path compute acoustic_meta identically (no train/serve skew).
+
+    If multiple acoustic envelopes co-window, the one with the highest YAMNet
+    top score wins; ties break on lowest envelope_id (deterministic). This mirrors
+    "the strongest acoustic evidence in the window drives the meta", consistent
+    with the sealed mapper taking the max-score label.
+    """
+    acoustic = [
+        e for e in envelopes if isinstance(e.features, AcousticFeatures)
+    ]
+    if not acoustic:
+        return None
+
+    def _key(e: FeatureEnvelope) -> tuple[float, str]:
+        feats = e.features
+        top = max((s for _, s in feats.yamnet_top), default=0.0)
+        # Negate id for "lowest id wins" under max(): compare (score, -ord-ish);
+        # simpler: pick max score, tiebreak lowest envelope_id lexically.
+        return (top, e.envelope_id)
+
+    # Highest top score; on tie, lowest envelope_id. max() on score, but for the
+    # tiebreak we want the SMALLEST id, so select explicitly.
+    best = acoustic[0]
+    best_top = max((s for _, s in best.features.yamnet_top), default=0.0)
+    for e in acoustic[1:]:
+        top = max((s for _, s in e.features.yamnet_top), default=0.0)
+        if top > best_top or (top == best_top and e.envelope_id < best.envelope_id):
+            best, best_top = e, top
+
+    return acoustic_meta_from_yamnet(best.features.yamnet_top)
+
+
 def fuse_window(envelopes: list[FeatureEnvelope]) -> FusedObject | None:
     """
     Fuse one correlated group into a FusedObject. Returns None for an empty
@@ -120,6 +164,7 @@ def fuse_window(envelopes: list[FeatureEnvelope]) -> FusedObject | None:
         contributors=contributors,
         n_modalities=len(mods),
         is_multimodal=len(mods) >= 2,
+        acoustic_meta=_acoustic_meta_for(envelopes),
     )
 
 

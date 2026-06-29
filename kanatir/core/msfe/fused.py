@@ -31,7 +31,19 @@ from pydantic import BaseModel, Field, model_validator
 from kanatir.pipelines.common.envelope import GeoRef, Modality
 
 # Bump on any breaking change to the fused-object structure. Consumers gate here.
-FUSED_SCHEMA_VERSION = "1.0.0"
+#
+# 1.1.0 (M9, TRL 3->4): adds the OPTIONAL `acoustic_meta` field carrying
+# YAMNet-derived acoustic-event metadata (top class, score, entropy, semantic
+# group scores) PAST the Dempster-Shafer mass collapse, so the ADE featurizer
+# can see acoustic distinctiveness the coarse UAV/GROUND/AMBIENT frame discards.
+# The field is optional with a None default: a FusedObject without it is still
+# valid (e.g. a video-only or video+RF object). The fusion FRAME is unchanged —
+# no new hypothesis — and the D-S combination core (dempster_shafer.py) and the
+# sealed acoustic mass mapper (evidence.acoustic_to_mass) are untouched. Sealed
+# M7/M8 1.0.0 objects remain reproducible at their sealed commits; the live
+# 1.1.0 runtime gates on exact version match (see kanatir.core.ade.__main__),
+# so a 1.0.0 object on a live bus is skipped, not silently up-converted.
+FUSED_SCHEMA_VERSION = "1.1.0"
 
 # The Dempster-Shafer frame of discernment for M3. The hypotheses MSFE fuses
 # belief over. Kept small and explicit for the gate; extend in a later sprint
@@ -42,6 +54,30 @@ FUSED_SCHEMA_VERSION = "1.0.0"
 # UNKNOWN carries mass on the full frame Theta = ignorance ("could be anything").
 HYPOTHESES: tuple[str, ...] = ("UAV", "GROUND", "AMBIENT")
 UNKNOWN = "UNKNOWN"
+
+# M9 (TRL 3->4): the frozen semantic-group ontology for acoustic events. These
+# are coarse AudioSet-lineage parents, NOT Dempster-Shafer hypotheses — their
+# whole purpose is to re-expose distinctions the {UAV,GROUND,AMBIENT} frame
+# collapses (siren vs engine vs impact all read as "GROUND" in the frame but are
+# distinct groups here). Frozen BEFORE evaluation to avoid eval-set tuning; the
+# ordering is contractual because the ADE featurizer binds fixed indices to
+# these names in this exact order. Append-only if ever extended.
+#
+# NOTE (recorded by decision): `chainsaw` (an ESC-50 eval positive) is NOT
+# explicitly group-mapped in this block. This was intentional, to preserve the
+# frozen-before-eval policy after held-out category coverage was inspected.
+# Chainsaw distinctiveness is carried by the scalar acoustic features
+# (ac_top_score, ac_yamnet_entropy). A future TRL 4+ ontology expansion may add
+# a mechanical_tool group ONLY under a broader pre-registered acoustic ontology,
+# never from post-hoc eval coverage.
+ACOUSTIC_GROUP_NAMES: tuple[str, ...] = (
+    "siren_alarm",
+    "engine_vehicle",
+    "impact_transient",
+    "aircraft_uav",
+    "voice",
+    "nature_ambient",
+)
 
 
 def _utcnow() -> datetime:
@@ -56,6 +92,45 @@ class Contributor(BaseModel):
     source_sensor_id: str
     capture_ts: datetime
     audit_event_id: int | None = None  # PGC link, carried through unbroken
+
+
+class AcousticMeta(BaseModel):
+    """
+    YAMNet-derived acoustic-event metadata carried on a FusedObject PAST the
+    Dempster-Shafer mass collapse (M9, TRL 3->4).
+
+    The acoustic mass mapper (evidence.acoustic_to_mass) projects the top YAMNet
+    label onto the coarse {UAV,GROUND,AMBIENT} frame, which collapses
+    acoustically-distinct sounds (siren, engine, train, car_horn) onto similar
+    belief-mass vectors — the diagnosed M7 recall limitation. This block does NOT
+    edit that sealed mapper; instead it routes the surviving YAMNet detail (which
+    already lives on the acoustic FeatureEnvelope as `yamnet_top`) around the
+    collapse and onto the fused object, so the ADE featurizer can see it directly.
+
+    Fields (all derived purely from AcousticFeatures.yamnet_top):
+      top_label      the winning YAMNet class label for the window
+      top_score      its score in [0, 1]
+      yamnet_entropy Shannon entropy (nats) over the yamnet_top score
+                     distribution; low = one class dominates (distinct event),
+                     high = diffuse (ambient). This is a cue the mass collapse
+                     destroys.
+      group_scores   one score per frozen semantic group (ACOUSTIC_GROUP_NAMES),
+                     each the MAX yamnet_top score among labels matching that
+                     group's fragments, in [0, 1]. Absent groups are present
+                     with 0.0, so the dict shape is stable.
+    """
+
+    top_label: str
+    top_score: float = Field(ge=0.0, le=1.0)
+    yamnet_entropy: float = Field(ge=0.0)
+    group_scores: dict[str, float]
+
+    @model_validator(mode="after")
+    def _check(self) -> AcousticMeta:
+        for g, v in self.group_scores.items():
+            if not (0.0 <= v <= 1.0):
+                raise ValueError(f"group_score for '{g}' out of range: {v}")
+        return self
 
 
 class BeliefMass(BaseModel):
@@ -116,6 +191,12 @@ class FusedObject(BaseModel):
 
     n_modalities: int = Field(ge=1)
     is_multimodal: bool  # n_modalities >= 2
+
+    # M9 (TRL 3->4): optional YAMNet-derived acoustic-event metadata. None when
+    # no acoustic envelope contributed (video-only, video+RF). Optional with a
+    # None default so 1.0.0-shaped payloads still parse; the live runtime gates
+    # on fused_schema_version, so sealed 1.0.0 objects are skipped, not coerced.
+    acoustic_meta: AcousticMeta | None = None
 
     @model_validator(mode="after")
     def _coherence(self) -> FusedObject:

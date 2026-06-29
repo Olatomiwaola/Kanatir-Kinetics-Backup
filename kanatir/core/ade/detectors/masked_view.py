@@ -24,15 +24,23 @@ once a proper multimodal normal corpus exists.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    import numpy as np
-
 # M7 acoustic-led view: drop n_modalities (index 6 in FEATURE_NAMES).
 M7_FEATURE_VIEW = "m7_acoustic_led_no_n_modalities"
 M7_KEPT_INDICES: tuple[int, ...] = (0, 1, 2, 3, 4, 5, 7)
 M7_EXCLUDED_FEATURES: tuple[str, ...] = ("n_modalities",)
+
+# M9 acoustic-event-aware view (TRL 3->4): same n_modalities exclusion rationale
+# as M7 (the m9 fit corpus is still acoustic-led / structurally n_modalities=1,
+# so letting the detector see modality count would teach a corpus-design
+# artifact), PLUS the 8 appended acoustic-event features (indices 8..15) which
+# are exactly what this block adds to recover acoustic distinctiveness. Index 6
+# (n_modalities) dropped; everything else kept.
+#
+# These M7 constants are retained UNCHANGED so the sealed M7 fit remains
+# reproducible from fit_ade.py at the M7 commit. The m9 fit uses the M9 view.
+M9_FEATURE_VIEW = "m9_acoustic_event_aware"
+M9_KEPT_INDICES: tuple[int, ...] = (0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+M9_EXCLUDED_FEATURES: tuple[str, ...] = ("n_modalities",)
 
 
 class MaskedFeatureView:

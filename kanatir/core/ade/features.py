@@ -31,7 +31,12 @@ from __future__ import annotations
 import math
 from typing import TYPE_CHECKING
 
-from kanatir.core.msfe.fused import HYPOTHESES, UNKNOWN, FusedObject
+from kanatir.core.msfe.fused import (
+    ACOUSTIC_GROUP_NAMES,
+    HYPOTHESES,
+    UNKNOWN,
+    FusedObject,
+)
 
 if TYPE_CHECKING:
     import numpy as np
@@ -46,10 +51,28 @@ if TYPE_CHECKING:
 #   5     : confidence  (== belief.top_confidence, the winning specific mass)
 #   6     : n_modalities (how many distinct sensor types agreed to this object)
 #   7     : belief entropy over the full mass assignment (spread of belief)
+#   --- M9 (TRL 3->4) acoustic-event-aware features, APPENDED (indices 0..7 are
+#       byte-identical to the M7 1.0.0 layout; the sealed M7 artifact remains
+#       reproducible at its commit, never forward-loaded into this 1.1.0 code) ---
+#   8     : ac_top_score        (YAMNet winning-class score; 0.0 if no acoustic)
+#   9     : ac_yamnet_entropy   (entropy over yamnet_top; 0.0 if no acoustic)
+#   10..15: ac_grp_*            (per-group max scores, ACOUSTIC_GROUP_NAMES order;
+#                                all 0.0 if no acoustic — honest absence, never
+#                                fabricated signal, mirroring the RF missing-
+#                                evidence posture)
+#
+# These features carry YAMNet distinctiveness PAST the Dempster-Shafer mass
+# collapse that limited M7 acoustic recall. The fusion frame is unchanged; this
+# is an ADE detector-feature change only.
 
 # Bump this on any change to FEATURE_NAMES / FEATURE_DIM. The ADE model artifact
 # pins this value; ADE startup hard-fails if a loaded model's version != this.
-FEATURE_SCHEMA_VERSION = "1.0.0"
+#
+# 1.1.0 (M9): appended 8 acoustic-event-aware features (indices 8..15). The M7
+# 1.0.0 artifact will NOT validate against this module (exact-eq on feature_names
+# in model_io._validate_pins) — by design: it stays sealed/reproducible at its
+# own commit; new code carries the m9 view only.
+FEATURE_SCHEMA_VERSION = "1.1.0"
 
 FEATURE_NAMES: tuple[str, ...] = (
     *(f"mass_{h}" for h in HYPOTHESES),
@@ -58,6 +81,10 @@ FEATURE_NAMES: tuple[str, ...] = (
     "confidence",
     "n_modalities",
     "belief_entropy",
+    # --- M9 appended ---
+    "ac_top_score",
+    "ac_yamnet_entropy",
+    *(f"ac_grp_{g}" for g in ACOUSTIC_GROUP_NAMES),
 )
 FEATURE_DIM = len(FEATURE_NAMES)
 
@@ -90,4 +117,22 @@ def extract_features(obj: FusedObject) -> np.ndarray:
         float(obj.n_modalities),                           # 6 modality count
         _belief_entropy(masses),                           # 7 belief spread
     ]
+
+    # --- M9 (TRL 3->4) appended acoustic-event-aware block (indices 8..15) ---
+    # Read by FIXED key order with .get(group, 0.0); NEVER iterate group_scores,
+    # preserving the positional-stability invariant. Missing acoustic_meta -> all
+    # zeros: honest absence of acoustic evidence (mirrors RF missing-evidence),
+    # never a fabricated value.
+    am = obj.acoustic_meta
+    if am is None:
+        vec.append(0.0)  # 8 ac_top_score
+        vec.append(0.0)  # 9 ac_yamnet_entropy
+        vec.extend(0.0 for _ in ACOUSTIC_GROUP_NAMES)  # 10..15 groups
+    else:
+        vec.append(float(am.top_score))        # 8
+        vec.append(float(am.yamnet_entropy))   # 9
+        vec.extend(                            # 10..15, fixed group order
+            float(am.group_scores.get(g, 0.0)) for g in ACOUSTIC_GROUP_NAMES
+        )
+
     return np.asarray(vec, dtype=np.float64)

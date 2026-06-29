@@ -26,7 +26,10 @@ from kanatir.core.ade.detectors.masked_view import (  # noqa: E402
     M7_KEPT_INDICES,
     MaskedFeatureView,
 )
-from kanatir.core.ade.features import FEATURE_DIM, FEATURE_NAMES, FEATURE_SCHEMA_VERSION  # noqa: E402
+from kanatir.core.ade.features import (  # noqa: E402
+    FEATURE_DIM,
+    FEATURE_NAMES,
+)
 
 
 class _SpyDetector:
@@ -59,7 +62,6 @@ def test_fit_masks_to_seven_columns():
     X = np.random.RandomState(0).rand(20, FEATURE_DIM)
     mv.fit(X)
     assert spy.fit_ncols == len(M7_KEPT_INDICES) == 7
-    assert FEATURE_DIM == 8
 
 
 # 2. score passes 7 cols to inner -----------------------------------------
@@ -77,8 +79,10 @@ def test_n_modalities_does_not_change_score():
     rng = np.random.RandomState(7)
     mv.fit(rng.rand(200, FEATURE_DIM))
     base = rng.rand(FEATURE_DIM)
-    a = base.copy(); a[6] = 1.0   # n_modalities = 1
-    b = base.copy(); b[6] = 5.0   # n_modalities = 5
+    a = base.copy()
+    a[6] = 1.0  # n_modalities = 1
+    b = base.copy()
+    b[6] = 5.0  # n_modalities = 5
     assert mv.score(a) == mv.score(b)
     assert "n_modalities" in M7_EXCLUDED_FEATURES
     assert FEATURE_NAMES[6] == "n_modalities"  # the index we're masking is correct
@@ -90,15 +94,22 @@ def test_conflict_k_can_change_score():
     rng = np.random.RandomState(11)
     mv.fit(rng.rand(200, FEATURE_DIM))
     base = rng.rand(FEATURE_DIM)
-    a = base.copy(); a[4] = 0.0
-    b = base.copy(); b[4] = 0.9   # large conflict_k swing
+    a = base.copy()
+    a[4] = 0.0
+    b = base.copy()
+    b[4] = 0.9  # large conflict_k swing
     assert FEATURE_NAMES[4] == "conflict_k"
     # conflict_k is kept in the view, so an extreme swing should move the score.
     assert mv.score(a) != mv.score(b)
 
 
-# 5. feature schema version unchanged -------------------------------------
-def test_feature_schema_version_unchanged():
-    assert FEATURE_SCHEMA_VERSION == "1.0.0"
-    assert FEATURE_DIM == 8
+# 5. M7 view invariants intact under the M9 schema bump -------------------
+def test_m7_view_invariants_intact():
+    # GLOBAL contract advanced to 1.1.0/16-dim at M9 (owned by
+    # test_features_m9.py). The M7 VIEW must stay stable: it still masks out
+    # n_modalities (index 6) and keeps exactly its 7 columns, so the sealed M7
+    # artifact stays reproducible at its commit.
+    assert M7_KEPT_INDICES == (0, 1, 2, 3, 4, 5, 7)
+    assert len(M7_KEPT_INDICES) == 7
+    assert "n_modalities" in M7_EXCLUDED_FEATURES
     assert FEATURE_NAMES[6] == "n_modalities"
