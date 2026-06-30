@@ -3,10 +3,12 @@
 **Block ID:** M9-ACOUSTIC (TRL 3 → 4 representation maturation)
 **Prior sealed state:** M8-RF — `172ba0c`; M7 — TRL 3 close gate, `df82e13` / `adf0d33`
 **Repo:** `Olatomiwaola/Kanatir-Kinetics-Backup`
-**Status:** CODE COMPLETE — all decisions confirmed, all in-sandbox claims test-backed.
-Live fit + held-out evaluation are an operator step on `olaberry` (real broker,
-real clips); the validation-result section of this record is to be completed from
-that run before the block is declared closed.
+**Status:** CLOSED — live fit + held-out eval complete on `olaberry`
+(run_id `m7eval_20260630T012907Z_a69dd4`); §8 recorded from that run.
+Outcome: improved separability (F1 0.214 → 0.444, Recall 0.12 → 0.32), short
+of the F1 ≥ 0.75 TRL-4 threshold. TRL 3 → 4 maturation evidence; NOT "TRL 4
+achieved." Detector calibration against a representative corpus remains a
+carry-forward.
 
 > This record documents new, separately gated TRL 3 → 4 representation work. It
 > does **not** modify, rewrite, or re-gate any sealed M7 or M8-RF evidence. M7
@@ -255,7 +257,63 @@ Procedure (apples-to-apples with M7):
    siren-vs-ambient probe and z-reach; then the metric table (Precision, Recall,
    F1, FPR, latency) beside the M7 baseline.
 
-**Result:** _[fill from the live run]_
+**Result (live on `olaberry`, run_id `m7eval_20260630T012907Z_a69dd4`):**
+
+Eval framing identical to M7: balanced 50-clip held-out subset (25 positive +
+25 negative), seed 42, folds 4/5, `--window-s 0.96`, `ADE_Z_THRESHOLD=3.0`
+(M7 value, untuned), m9 artifact `ade_isoforest_m9.joblib`
+(`feature_view=m9_acoustic_event_aware`, 16-dim, `acoustic_fraction=1.0`).
+Prewarm: 35 fit-fold-1 ambient clips, `phase=prewarm scored=false`, excluded
+from metrics; `baseline_active_observed=true` (warmup ruled out).
+
+*1. Anomaly-score distributions (scored eval clips):*
+- Positives (n=25): mean 0.455, max 0.707, min 0.213
+- Ambient   (n=25): mean 0.316, max 0.702, min 0.041
+The positive and ambient *bodies* separate (Δmean = 0.139, positives higher),
+the failure M7 could not achieve. The *tails* still overlap (maxes 0.707 vs
+0.702): at least one ambient clip scores as high as the strongest positive,
+which is the source of the residual false-alarm rate below.
+
+*2. Separability vs M7:* M7 showed near-complete collapse (0/30 positives
+reached the threshold; ambient and positive masses indistinguishable). M9
+moves positives above ambient on the mean and lifts 8/25 positives across the
+escalation threshold. The acoustic-event-aware representation (`acoustic_meta`
+carrying YAMNet class distinctiveness past the D-S mass collapse) is supported
+as the mechanism: distinctions the {UAV,GROUND,AMBIENT} frame collapsed now
+reach the detector and separate the distribution bodies.
+
+*3. Metric table (held-out folds 4/5, balanced-50, seed 42):*
+
+| Metric      | M7 baseline   | M9            | TRL-4 threshold |
+|-------------|---------------|---------------|-----------------|
+| Precision   | 1.00          | 0.727         | —               |
+| Recall      | 0.12          | 0.32          | —               |
+| F1          | 0.214         | 0.444         | ≥ 0.75 → FAIL   |
+| FPR         | 0.00          | 0.12          | ≤ 0.15 → PASS   |
+| Latency p95 | ~6.2 s clean  | 14.1 s raw*   | ≤ 5 s → FAIL    |
+
+Confusion (M9): TP 8 / FP 3 / TN 22 / FN 17.
+
+*A Kafka consumer-group session timeout (~105.8 s rebalance, `SESSTMOUT`,
+join-state steady) occurred during the run — the same artifact class M7
+excluded when reporting clean p95. This run's artifacts do not carry per-clip
+latency, so a clean p95 cannot be reconstructed from them; the raw 14.1 s is
+reported with the confound flagged. Latency remains the M7 carry-forward
+(host-native windowing/templating gap, Jetson/Flink edge work), untouched by
+this representation block.
+
+**Outcome (against the pre-committed honest-outcome statement):** This is the
+"improved separability short of F1 ≥ 0.75" outcome. F1 roughly doubled
+(0.214 → 0.444) and recall nearly tripled (0.12 → 0.32); the representation
+root cause is addressed and positives separate from ambient on the
+distribution body. F1 = 0.444 does **not** meet the 0.75 TRL-4 threshold, and
+**this is NOT "TRL 4 achieved."** The residual is (a) tail overlap driving FPR
+0.00 → 0.12 (still within the ≤0.15 bound) and precision 1.00 → 0.727, and
+(b) detector calibration against a representative operational corpus — already
+a documented carry-forward; ESC-50 fit-folds are not that corpus. The
+representation hypothesis is supported, not falsified; the dedicated
+acoustic-event head (A3 follow-on) is not triggered. No threshold gaming:
+z-threshold held at the M7 value of 3.0 throughout.
 
 **Honest-outcome statement (pre-committed):** This block may improve separability
 without reaching F1 ≥ 0.75 on fit-folds-only ESC-50. That is still a valid
@@ -306,11 +364,10 @@ candidate. The result is reported as found; no threshold gaming.
 ---
 
 **Prior state referenced:** M8-RF `172ba0c`; M7 `df82e13` / `adf0d33`.
-**This block closes as (pending §8):** acoustic representation redesign validated
-for improved separability under a versioned acoustic-event feature schema
+**This block closes as:** acoustic representation redesign validated for
+improved separability under a versioned acoustic-event feature schema
 (`m9_acoustic_event_aware`, `FEATURE_SCHEMA_VERSION 1.1.0`,
-`FUSED_SCHEMA_VERSION 1.1.0`); YAMNet class distinctiveness carried past the D-S
-mass collapse via an additive optional `acoustic_meta`; fusion frame and core
-untouched; sealed M7/M8-RF preserved; fit/eval fold disjointness enforced by a
-hard leakage guard and an acoustic-presence guard. Detector calibration against a
-representative corpus remains a carry-forward.
+`FUSED_SCHEMA_VERSION 1.1.0`). Live held-out eval (folds 4/5, balanced-50,
+seed 42, z=3.0 untuned): F1 0.444, Recall 0.32, FPR 0.12 (PASS), vs M7 F1
+0.214 / Recall 0.12. Separability improved; F1 below 0.75 — NOT TRL 4.
+Calibration against a representative corpus remains carry-forward.

@@ -1,0 +1,74 @@
+{
+  "feature_names": [
+    "mass_UAV",
+    "mass_GROUND",
+    "mass_AMBIENT",
+    "mass_UNKNOWN",
+    "conflict_k",
+    "confidence",
+    "n_modalities",
+    "belief_entropy",
+    "ac_top_score",
+    "ac_yamnet_entropy",
+    "ac_grp_siren_alarm",
+    "ac_grp_engine_vehicle",
+    "ac_grp_impact_transient",
+    "ac_grp_aircraft_uav",
+    "ac_grp_voice",
+    "ac_grp_nature_ambient"
+  ],
+  "feature_dim": 16,
+  "feature_schema_version": "1.1.0",
+  "detector_config": {
+    "isolation_forest": {
+      "n_estimators": 100,
+      "contamination": "auto",
+      "random_state": 42
+    }
+  },
+  "corpus_id": "sha256:3ec050b201fff7b7504d93ed2344a165",
+  "corpus_path": "datasets/ade_fit_corpus/normal_corpus_m9.jsonl",
+  "n_samples": 200,
+  "acoustic_fraction": 1.0,
+  "min_acoustic_fraction": 0.8,
+  "trained_at": "2026-06-30T01:09:35.084165+00:00",
+  "source_corpus_id": "sha256:71ef96920ddc0bf920d3cc775852c1de",
+  "manifest_path": "datasets/ade_fit_corpus/normal_corpus_m9.jsonl.manifest.json",
+  "msfe_window_s": 30.0,
+  "n_modalities_seen": {
+    "1": 200
+  },
+  "split_policy": "esc50_fold_based_disjoint",
+  "fit_folds": [
+    1,
+    2,
+    3
+  ],
+  "eval_folds": [
+    4,
+    5
+  ],
+  "leakage_check": "passed",
+  "fold_guard": "passed",
+  "feature_view": "m9_acoustic_event_aware",
+  "kept_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "excluded_features": [
+    "n_modalities"
+  ]
+}
