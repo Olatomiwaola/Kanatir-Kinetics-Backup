@@ -100,7 +100,11 @@ def test_anomaly_record_versioned_from_record_one():
         baseline_state=BaselineState.ACTIVE, conflict_k=0.1,
         contributors=[_contributor(13, Modality.VIDEO, "vid-01")],
     )
-    assert rec.anomaly_schema_version == ANOMALY_SCHEMA_VERSION == "1.0.0"
+    # Literal bumped 1.0.0 -> 1.1.0 by M5.1 (contract D1: additive optional
+    # source_track_refs field). The invariant under test is unchanged — a record
+    # carries the current ANOMALY_SCHEMA_VERSION from record #1 — only the pinned
+    # literal moved with the deliberate additive-minor bump.
+    assert rec.anomaly_schema_version == ANOMALY_SCHEMA_VERSION == "1.1.0"
 
 
 def test_anomaly_record_round_trips_json():

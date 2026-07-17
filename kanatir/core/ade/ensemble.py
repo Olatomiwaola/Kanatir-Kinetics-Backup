@@ -96,4 +96,5 @@ class AnomalyEnsemble:
             conflict_k=conflict_k,
             detector_scores=detector_scores,
             contributors=obj.contributors,  # FULL lineage, verbatim
+            source_track_refs=obj.source_track_refs,  # M5.1: refs preserved verbatim
         )

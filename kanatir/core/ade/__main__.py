@@ -41,6 +41,18 @@ from kanatir.core.msfe.fused import FUSED_SCHEMA_VERSION, FusedObject
 log = structlog.get_logger("ade")
 
 
+def _major(version: str) -> str:
+    """Major component of a semver string — the D-GATE granularity (M5.1, D2).
+
+    ADE accepts any fused object whose MAJOR matches FUSED_SCHEMA_VERSION's,
+    mirroring the CSAT and XAI hops. source_track_refs is an additive
+    (semver-minor) field, so a future 1.x MSFE bump must not make ADE skip the
+    object. The imported target already rose to 1.2.0 in-release, so this only
+    hardens ADE against future minors — it does not change in-release behaviour.
+    """
+    return version.split(".", 1)[0]
+
+
 def _build_unfitted_ensemble() -> AnomalyEnsemble:
     baseline = AdaptiveBaseline(
         window=int(os.getenv("ADE_BASELINE_WINDOW", "200")),
@@ -118,7 +130,7 @@ def main() -> int:
     signal.signal(signal.SIGTERM, _stop)
 
     log.info("ade.broker", bootstrap=bootstrap, in_topic=in_topic, out_topic=out_topic,
-             expects_fused_schema=FUSED_SCHEMA_VERSION)
+             expects_fused_major=_major(FUSED_SCHEMA_VERSION))
 
     try:
         while running:
@@ -136,9 +148,10 @@ def main() -> int:
                 log.warning("ade.decode_skip", error=str(e))
                 continue
 
-            if obj.fused_schema_version != FUSED_SCHEMA_VERSION:
+            if _major(obj.fused_schema_version) != _major(FUSED_SCHEMA_VERSION):
                 log.warning("ade.schema_skip", got=obj.fused_schema_version,
-                            expected=FUSED_SCHEMA_VERSION, fused_id=obj.fused_id)
+                            expected_major=_major(FUSED_SCHEMA_VERSION),
+                            fused_id=obj.fused_id)
                 continue
 
             record = ensemble.process(obj)

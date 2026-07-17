@@ -33,10 +33,23 @@ from uuid import uuid4
 
 from pydantic import BaseModel, Field, model_validator
 
-from kanatir.core.msfe.fused import Contributor, GeoRef
+from kanatir.core.msfe.fused import Contributor, GeoRef, SourceTrackRef
 
 # Bump on any breaking change to the anomaly-record structure. Consumers gate here.
-ANOMALY_SCHEMA_VERSION = "1.0.0"
+#
+# 1.1.0 (M5.1, TRL 3->4): adds the OPTIONAL `source_track_refs` field, propagated
+# VERBATIM from FusedObject.source_track_refs (source_sensor_id + ByteTrack
+# track_id references present in the fused window). ADE re-publishes the refs
+# unchanged so CSAT can distinguish anomaly OBSERVATIONS from distinct video-track
+# REFERENCES; ADE performs no track<->record association. Optional with a None
+# default: None means no video-track-reference information was available on the
+# fused object (RF-only, acoustic-only, or a video window with no usable track
+# ids) — never an empty list, so the "unavailable" vs "present" distinction
+# survives to CSAT (distinct_video_track_ref_count = null, never 0). A multi-ref
+# record does NOT imply one physical object. 1.0.0-shaped payloads still parse
+# (field defaults to None). ADE moves its forward fused_schema_version gate from
+# exact-match to major-match in M5.1 (see kanatir.core.ade.__main__).
+ANOMALY_SCHEMA_VERSION = "1.1.0"
 
 
 def _utcnow() -> datetime:
@@ -82,6 +95,16 @@ class AnomalyRecord(BaseModel):
     # FULL lineage carried through — every contributing envelope's
     # audit_event_id survives into the anomaly record.
     contributors: list[Contributor] = Field(min_length=1)
+
+    # M5.1 (TRL 3->4): OPTIONAL source-local video-track references, propagated
+    # VERBATIM from FusedObject.source_track_refs. None = no video-track-reference
+    # information available on the fused object (RF-only, acoustic-only, or video
+    # with no usable track ids); a populated list = references present. NEVER an
+    # empty list for the no-information case — the None-vs-populated distinction is
+    # load-bearing downstream (CSAT distinct_video_track_ref_count = null, never 0).
+    # Carried through, never associated: ADE performs no track<->record join, and a
+    # multi-ref record does NOT imply one physical object.
+    source_track_refs: list[SourceTrackRef] | None = None
 
     detected_ts: datetime = Field(default_factory=_utcnow)
 
