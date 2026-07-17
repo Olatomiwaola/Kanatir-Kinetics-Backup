@@ -77,7 +77,11 @@ def _anomaly(
 def test_triaged_alert_versioned_from_record_one():
     a = _anomaly(fused_id="f1", audit_ids=[1])
     alert = TriagedAlert.from_anomalies([a])
-    assert alert.sa_schema_version == SA_SCHEMA_VERSION == "1.0.0"
+    # Literal bumped 1.0.0 -> 1.1.0 by M5.1 (contract D3: additive triage-honesty
+    # fields + incident continuity). The invariant under test is unchanged — a
+    # triaged alert carries the current SA_SCHEMA_VERSION from record #1 — only the
+    # pinned literal moved with the deliberate additive-minor bump.
+    assert alert.sa_schema_version == SA_SCHEMA_VERSION == "1.1.0"
 
 
 # --- Severity rule (deterministic) -------------------------------------------

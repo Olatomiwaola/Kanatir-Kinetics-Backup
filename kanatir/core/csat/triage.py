@@ -36,6 +36,7 @@ import math
 import os
 from collections.abc import Hashable
 from dataclasses import dataclass, field
+from uuid import uuid4
 
 from kanatir.core.ade.anomaly import AnomalyRecord
 from kanatir.core.csat.alert import Severity, TriagedAlert, assign_severity
@@ -54,6 +55,15 @@ CSAT_MAX_AGE_S = float(os.getenv("CSAT_MAX_AGE_S", "300"))
 # CALIBRATION-PENDING: like ADE_Z_THRESHOLD, this constant has no real-media
 # justification yet. The site_id path (M5's actual path) does not use it.
 CSAT_DEDUP_RADIUS_M = float(os.getenv("CSAT_DEDUP_RADIUS_M", "100"))
+
+# M5.1 (D4): TTL that bounds the idempotency seen-set. A genuine Kafka redelivery
+# recurs within seconds; a fused_id older than the longest open incident cannot
+# legitimately reappear as a LIVE duplicate, so it is safe to evict. Effective TTL
+# = CSAT_MAX_AGE_S + margin, kept comfortably longer than one max-age window. A
+# replay arriving AFTER eviction is treated as a NEW observation (documented,
+# acceptable). Deterministic: eviction uses the injected `now`, never a clock.
+CSAT_SEEN_TTL_MARGIN_S = float(os.getenv("CSAT_SEEN_TTL_MARGIN_S", "300"))
+CSAT_SEEN_TTL_S = CSAT_MAX_AGE_S + CSAT_SEEN_TTL_MARGIN_S
 
 _EARTH_R_M = 6_371_000.0
 
@@ -115,6 +125,14 @@ class _OpenGroup:
     members: list[AnomalyRecord] = field(default_factory=list)
     opened_at: float = 0.0          # wall-clock (monotonic-ish) when group opened
     last_member_at: float = 0.0     # wall-clock of most recent add (sliding timer)
+    # M5.1 (D5): geo-temporal incident identity. Assigned when the group opens
+    # (first member = incident begins); PRESERVED across each max-age flush-and-
+    # reset so a long-running event re-emits under a stable id, with
+    # incident_sequence incrementing on each reset. A group that goes idle and
+    # closes ends the incident; a later member in the same geo bucket opens a NEW
+    # group -> new incident_id. Geo-temporal continuity, NOT physical-object.
+    incident_id: str = field(default_factory=lambda: str(uuid4()))
+    incident_sequence: int = 0
 
     def add(self, rec: AnomalyRecord, now: float) -> None:
         self.members.append(rec)
@@ -144,7 +162,12 @@ class _OpenGroup:
         )
 
     def to_alert(self) -> TriagedAlert:
-        return TriagedAlert.from_anomalies(self.members, trigger=self.trigger())
+        return TriagedAlert.from_anomalies(
+            self.members,
+            trigger=self.trigger(),
+            incident_id=self.incident_id,
+            incident_sequence=self.incident_sequence,
+        )
 
 
 class TriageBuffer:
@@ -163,18 +186,29 @@ class TriageBuffer:
     """
 
     def __init__(self) -> None:
-        self._seen_fused_ids: set[str] = set()
+        # D4: map fused_id -> last-seen `now` so stale ids can be TTL-evicted and
+        # the idempotency set stays bounded (was an unbounded set[str] pre-M5.1).
+        self._seen_fused_ids: dict[str, float] = {}
         self._groups: dict[Hashable, list[_OpenGroup]] = {}
         self.dropped_duplicates: int = 0  # consumer metric; NOT a suppressed_count
 
     # -- ingest -----------------------------------------------------------------
 
+    def _evict_stale_seen(self, now: float) -> None:
+        """Drop seen fused_ids older than the TTL so the idempotency set stays
+        bounded (D4). Deterministic in the injected `now`."""
+        stale = [fid for fid, ts in self._seen_fused_ids.items()
+                 if (now - ts) >= CSAT_SEEN_TTL_S]
+        for fid in stale:
+            del self._seen_fused_ids[fid]
+
     def offer(self, rec: AnomalyRecord, *, now: float) -> None:
         """Admit one anomaly: drop if a redelivery, else place in a group."""
+        self._evict_stale_seen(now)
         if rec.fused_id in self._seen_fused_ids:
             self.dropped_duplicates += 1
             return
-        self._seen_fused_ids.add(rec.fused_id)
+        self._seen_fused_ids[rec.fused_id] = now
 
         key = geo_group_key(rec.geo)
         bucket = self._groups.setdefault(key, [])
@@ -206,6 +240,7 @@ class TriageBuffer:
                     grp.members.clear()
                     grp.opened_at = now
                     grp.last_member_at = now
+                    grp.incident_sequence += 1  # D5: next re-emit is the next sequence
                     keep.append(grp)
                 else:
                     keep.append(grp)

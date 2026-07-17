@@ -46,10 +46,21 @@ from uuid import uuid4
 from pydantic import BaseModel, Field, model_validator
 
 from kanatir.core.ade.anomaly import AnomalyRecord, BaselineState
-from kanatir.core.msfe.fused import Contributor, GeoRef
+from kanatir.core.msfe.fused import UNKNOWN, Contributor, GeoRef, SourceTrackRef
 
 # Bump on any breaking change to the triaged-alert structure. Consumers gate here.
-SA_SCHEMA_VERSION = "1.0.0"
+#
+# 1.1.0 (M5.1, TRL 3->4): adds the additive triage-honesty fields
+# (observation_count, distinct_video_track_ref_count, identity_reference_available,
+# group_reason, incident_id, incident_sequence, class_breakdown) plus a verbatim
+# source_track_refs union, so the alert reports OBSERVATIONS distinctly from
+# distinct video-track REFERENCES, exposes mixed classes, and carries geo-temporal
+# incident continuity. distinct_video_track_ref_count is null (never 0) when no
+# refs are available — the "unavailable" vs "present" distinction is preserved end
+# to end. assign_severity is FROZEN: no new field feeds it, no multiplicity
+# escalation. XAI gates sa_schema_version on MAJOR match, so sealed M6 accepts
+# 1.1.0 unchanged (read-only).
+SA_SCHEMA_VERSION = "1.1.0"
 
 
 def _utcnow() -> datetime:
@@ -118,6 +129,56 @@ def _union_contributors(records: list[AnomalyRecord]) -> list[Contributor]:
     return merged
 
 
+def _union_track_refs(records: list[AnomalyRecord]) -> list[SourceTrackRef] | None:
+    """Union source-local video-track refs across merged anomalies, dedup'd on
+    the (source_sensor_id, track_id) PAIR.
+
+    Returns None when NO member carried any ref (the epistemic 'no information'
+    case) — never an empty list, so distinct_video_track_ref_count stays null
+    (never 0). Refs are only preserved and deduplicated here, never associated
+    across sources or modalities: a multi-ref alert makes no physical-object claim.
+    """
+    seen: set[tuple[str, int]] = set()
+    merged: list[SourceTrackRef] = []
+    for rec in records:
+        if rec.source_track_refs is None:
+            continue
+        for ref in rec.source_track_refs:
+            key = (ref.source_sensor_id, ref.track_id)
+            if key in seen:
+                continue
+            seen.add(key)
+            merged.append(ref)
+    return merged or None
+
+
+def _class_breakdown(records: list[AnomalyRecord]) -> dict[str, int]:
+    """Per-class anomaly-record counts, with UNKNOWN always explicit (never
+    omitted), so an operator sees the FULL composition of a merged group — not
+    just the trigger class. Sums to observation_count; hides nothing."""
+    counts: dict[str, int] = {}
+    for rec in records:
+        counts[rec.classification] = counts.get(rec.classification, 0) + 1
+    counts.setdefault(UNKNOWN, 0)
+    return counts
+
+
+def _group_reason(geo: GeoRef) -> str:
+    """The explicit grouping rule that placed members in one alert, mirroring the
+    tiered geo_group_key / _same_group logic in triage.py (read off GeoRef fields
+    directly to avoid a triage<->alert import cycle).
+
+    site_id present -> exact-site grouping within the sliding window
+    lat/lon present -> proximity-cell grouping within the sliding window
+    neither         -> single ungeolocated bucket within the sliding window
+    """
+    if geo.site_id is not None:
+        return "same_site_within_sliding_window"
+    if geo.lat is not None and geo.lon is not None:
+        return "same_proximity_cell_within_sliding_window"
+    return "ungeolocated_within_sliding_window"
+
+
 class TriagedAlert(BaseModel):
     """The object on the `alerts.triaged` topic."""
 
@@ -132,6 +193,11 @@ class TriagedAlert(BaseModel):
     # Operator situation snapshot — carried from the *triggering* anomaly
     # (the highest-severity / most-recent member of the merged set).
     severity: Severity
+    # The TRIGGER class: classification of the highest-severity member (tiebroken
+    # by most-recent window_end, matching _OpenGroup.trigger). The single class
+    # that DROVE the alert — NOT the group's composition. For the full per-class
+    # breakdown of every merged observation see class_breakdown (M5.1);
+    # classification must not be read as group composition.
     classification: str
     window_start: datetime
     window_end: datetime
@@ -156,6 +222,32 @@ class TriagedAlert(BaseModel):
     # contributors, dedup'd by audit_event_id.
     contributors: list[Contributor] = Field(min_length=1)
 
+    # M5.1 (TRL 3->4) triage-honesty surface. These make the alert report what it
+    # actually observed. None of them feed assign_severity (frozen).
+    #   observation_count            == len(anomaly_ids); == suppressed_count + 1.
+    #   distinct_video_track_ref_count  count of unique (source_sensor_id,
+    #                                track_id) across members; null when no refs
+    #                                (NEVER 0 — 0 would assert confirmed absence).
+    #   identity_reference_available bool: were any video-track refs present.
+    #   group_reason                 the explicit grouping rule string.
+    #   incident_id / incident_sequence  geo-temporal incident identity (D5),
+    #                                stable across max-age flushes; NOT physical-
+    #                                object continuity.
+    #   class_breakdown              per-class record counts, UNKNOWN explicit.
+    observation_count: int = Field(ge=1, default=1)
+    distinct_video_track_ref_count: int | None = None
+    identity_reference_available: bool = False
+    group_reason: str = ""
+    incident_id: str = Field(default_factory=lambda: str(uuid4()))
+    incident_sequence: int = Field(ge=0, default=0)
+    class_breakdown: dict[str, int] = Field(default_factory=dict)
+
+    # M5.1: union of source-local video-track refs across merged anomalies,
+    # dedup'd on (source_sensor_id, track_id). None = no ref information available
+    # (RF-only, acoustic-only, no usable track ids); NEVER an empty list. Preserved
+    # verbatim, never associated across sources -> no physical-object claim.
+    source_track_refs: list[SourceTrackRef] | None = None
+
     triaged_ts: datetime = Field(default_factory=_utcnow)
 
     @model_validator(mode="after")
@@ -167,6 +259,34 @@ class TriagedAlert(BaseModel):
                 "suppressed_count must equal len(anomaly_ids) - 1 "
                 f"(got {self.suppressed_count} vs {len(self.anomaly_ids)} ids)"
             )
+        # D6: observation_count is defined as len(anomaly_ids); enforcing it makes
+        # suppressed_count == observation_count - 1 byte-identical to the check
+        # above (an alias over the same quantity, not a new invariant) and makes
+        # the honesty field tamper-evident — an alert cannot lie about its own
+        # anomaly list.
+        if self.observation_count != len(self.anomaly_ids):
+            raise ValueError(
+                "observation_count must equal len(anomaly_ids) "
+                f"(got {self.observation_count} vs {len(self.anomaly_ids)})"
+            )
+        # D3: refs, count, and availability are mutually consistent — and the
+        # count is null (never 0) when no refs, so the alert can never assert a
+        # confirmed absence of video-track references.
+        if self.source_track_refs is None:
+            if self.distinct_video_track_ref_count is not None:
+                raise ValueError("distinct_video_track_ref_count must be null when no refs")
+            if self.identity_reference_available:
+                raise ValueError("identity_reference_available must be False when no refs")
+        else:
+            if self.distinct_video_track_ref_count != len(self.source_track_refs):
+                raise ValueError("distinct_video_track_ref_count must equal the ref count")
+            if not self.identity_reference_available:
+                raise ValueError("identity_reference_available must be True when refs present")
+        # D3: class composition is exhaustive and hides nothing.
+        if UNKNOWN not in self.class_breakdown:
+            raise ValueError("class_breakdown must carry an explicit UNKNOWN key")
+        if sum(self.class_breakdown.values()) != self.observation_count:
+            raise ValueError("class_breakdown counts must sum to observation_count")
         return self
 
     @property
@@ -180,12 +300,17 @@ class TriagedAlert(BaseModel):
         anomalies: list[AnomalyRecord],
         *,
         trigger: AnomalyRecord | None = None,
+        incident_id: str | None = None,
+        incident_sequence: int = 0,
     ) -> TriagedAlert:
         """Build one triaged alert from one-or-more anomalies (the dedup collapse).
 
         `trigger` is the anomaly whose snapshot/diagnostics drive the alert
         (default: the first). Severity is assigned from the trigger. Lineage is
-        the union across all members. Window spans the full merged set.
+        the union across all members. Window spans the full merged set. The M5.1
+        honesty fields are counted over the anomaly RECORDS here; incident identity
+        (D5) is supplied by the triage buffer's open-group, defaulting to a fresh
+        incident for a stand-alone build.
         """
         if not anomalies:
             raise ValueError("cannot triage an empty anomaly list")
@@ -197,6 +322,7 @@ class TriagedAlert(BaseModel):
         )
         window_start = min(a.window_start for a in anomalies)
         window_end = max(a.window_end for a in anomalies)
+        refs = _union_track_refs(anomalies)
         return cls(
             anomaly_ids=[a.anomaly_id for a in anomalies],
             severity=severity,
@@ -212,6 +338,14 @@ class TriagedAlert(BaseModel):
             dedup_window_start=window_start if len(anomalies) > 1 else None,
             dedup_window_end=window_end if len(anomalies) > 1 else None,
             contributors=_union_contributors(anomalies),
+            observation_count=len(anomalies),
+            distinct_video_track_ref_count=(len(refs) if refs is not None else None),
+            identity_reference_available=refs is not None,
+            group_reason=_group_reason(trig.geo),
+            incident_id=incident_id or str(uuid4()),
+            incident_sequence=incident_sequence,
+            class_breakdown=_class_breakdown(anomalies),
+            source_track_refs=refs,
         )
 
     def to_json(self) -> str:
