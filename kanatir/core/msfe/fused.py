@@ -43,7 +43,25 @@ from kanatir.pipelines.common.envelope import GeoRef, Modality
 # M7/M8 1.0.0 objects remain reproducible at their sealed commits; the live
 # 1.1.0 runtime gates on exact version match (see kanatir.core.ade.__main__),
 # so a 1.0.0 object on a live bus is skipped, not silently up-converted.
-FUSED_SCHEMA_VERSION = "1.1.0"
+#
+# 1.2.0 (M5.1, TRL 3->4): adds the OPTIONAL `source_track_refs` field — the set
+# of distinct source-local video-track references (source_sensor_id + ByteTrack
+# track_id) present in the fused window, deduplicated on (source_sensor_id,
+# track_id). It preserves references CVP produces that were previously dropped
+# at fusion: `source_sensor_id` already survived via Contributor, but `track_id`
+# never left the VideoFeatures.detections payload. The field is optional with a
+# None default: None means NO video-track-reference information is available
+# (RF-only, acoustic-only, or a video window with no usable track ids) — it is
+# never an empty list, so the epistemic distinction "unavailable" vs "present"
+# survives to CSAT (distinct_video_track_ref_count = null, never 0). A multi-ref
+# fused object does NOT imply one physical object: MSFE correlates on ingest_ts +
+# spatial key, not on track, so one FusedObject may legitimately span several
+# video tracks. This is reference preservation, NOT physical-object association.
+# 1.1.0-shaped payloads still parse (field defaults to None). The live runtime
+# gates on fused_schema_version; sealed 1.0.0/1.1.0 objects are skipped by an
+# exact-match consumer, not coerced (ADE moves to major-match in M5.1, see
+# kanatir.core.ade.__main__).
+FUSED_SCHEMA_VERSION = "1.2.0"
 
 # The Dempster-Shafer frame of discernment for M3. The hypotheses MSFE fuses
 # belief over. Kept small and explicit for the gate; extend in a later sprint
@@ -171,6 +189,22 @@ class BeliefMass(BaseModel):
         return self.masses.get(self.top_hypothesis, 0.0)
 
 
+class SourceTrackRef(BaseModel):
+    """A source-local video-track reference: one ByteTrack track id, qualified
+    by the sensor stream it came from.
+
+    ByteTrack ids are LOCAL to a source stream — track_id 5 on camera-01 and
+    track_id 5 on camera-02 are different tracks. The reference is therefore the
+    (source_sensor_id, track_id) pair, never the bare integer. This is a
+    reference to a *video track*, not a claim about a physical object: the same
+    physical object may hold several track ids (re-id gaps), and one fused window
+    may carry several refs without implying one object.
+    """
+
+    source_sensor_id: str
+    track_id: int
+
+
 class FusedObject(BaseModel):
     """The object on the `fused.objects` topic."""
 
@@ -197,6 +231,16 @@ class FusedObject(BaseModel):
     # None default so 1.0.0-shaped payloads still parse; the live runtime gates
     # on fused_schema_version, so sealed 1.0.0 objects are skipped, not coerced.
     acoustic_meta: AcousticMeta | None = None
+
+    # M5.1 (TRL 3->4): OPTIONAL set of distinct source-local video-track
+    # references present in this fused window, deduplicated on
+    # (source_sensor_id, track_id). None = no video-track-reference information
+    # available (RF-only, acoustic-only, or video with no usable track ids);
+    # a populated list = references present. NEVER an empty list for the
+    # no-information case — the None-vs-populated distinction is load-bearing
+    # downstream (CSAT distinct_video_track_ref_count = null, never 0). A
+    # multi-ref object does NOT imply one physical object (see the version note).
+    source_track_refs: list[SourceTrackRef] | None = None
 
     @model_validator(mode="after")
     def _coherence(self) -> FusedObject:

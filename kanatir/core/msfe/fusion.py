@@ -28,11 +28,13 @@ from kanatir.core.msfe.fused import (
     BeliefMass,
     Contributor,
     FusedObject,
+    SourceTrackRef,
 )
 from kanatir.pipelines.common.envelope import (
     AcousticFeatures,
     FeatureEnvelope,
     GeoRef,
+    VideoFeatures,
 )
 
 # Default correlation window. Two envelopes are co-windowed if their correlation
@@ -123,6 +125,43 @@ def _acoustic_meta_for(envelopes: list[FeatureEnvelope]) -> AcousticMeta | None:
     return acoustic_meta_from_yamnet(best.features.yamnet_top)
 
 
+def _track_refs_for(
+    envelopes: list[FeatureEnvelope],
+) -> list[SourceTrackRef] | None:
+    """
+    Extract the distinct source-local video-track references in this window, or
+    None if no video-track-reference information is available (M5.1, TRL 3->4).
+
+    Mirrors _acoustic_meta_for: modality-aware, additive, and deliberately
+    conservative about the no-information case. Walks every VIDEO envelope, reads
+    each Detection.track_id, and qualifies it with the envelope's
+    source_sensor_id. Deduplicates on the (source_sensor_id, track_id) pair, so
+    the same track id from two cameras yields two refs and a repeated detection
+    from one track yields one.
+
+    Returns None — NOT [] — when no video envelope contributed, or the video
+    envelopes carried no usable track ids. The None-vs-populated distinction is
+    load-bearing: it maps to CSAT's distinct_video_track_ref_count = null (never
+    0), i.e. "unavailable" rather than "confirmed zero". A populated result is a
+    set of references, not a physical-object count.
+    """
+    seen: set[tuple[str, int]] = set()
+    refs: list[SourceTrackRef] = []
+    for e in envelopes:
+        feats = e.features
+        if not isinstance(feats, VideoFeatures):
+            continue
+        for det in feats.detections:
+            key = (e.source_sensor_id, det.track_id)
+            if key in seen:
+                continue
+            seen.add(key)
+            refs.append(
+                SourceTrackRef(source_sensor_id=e.source_sensor_id, track_id=det.track_id)
+            )
+    return refs or None
+
+
 def fuse_window(envelopes: list[FeatureEnvelope]) -> FusedObject | None:
     """
     Fuse one correlated group into a FusedObject. Returns None for an empty
@@ -165,6 +204,7 @@ def fuse_window(envelopes: list[FeatureEnvelope]) -> FusedObject | None:
         n_modalities=len(mods),
         is_multimodal=len(mods) >= 2,
         acoustic_meta=_acoustic_meta_for(envelopes),
+        source_track_refs=_track_refs_for(envelopes),
     )
 
 

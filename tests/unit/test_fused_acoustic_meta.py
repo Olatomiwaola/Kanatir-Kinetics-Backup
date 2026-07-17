@@ -47,8 +47,12 @@ def _meta():
     )
 
 
-def test_version_is_1_1_0():
-    assert FUSED_SCHEMA_VERSION == "1.1.0"
+def test_version_is_1_2_0():
+    # M5.1 (TRL 3->4) bumped FUSED_SCHEMA_VERSION 1.1.0 -> 1.2.0 for the additive
+    # optional source_track_refs field. See docs/validation/M5_1_decision_contract.md
+    # (contract 70a6906). This pin follows the bump; the acoustic-meta behaviour
+    # tested elsewhere in this file is unchanged.
+    assert FUSED_SCHEMA_VERSION == "1.2.0"
 
 
 def test_fused_object_without_acoustic_meta_validates():
