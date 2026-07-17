@@ -244,7 +244,7 @@ Decisions D1–D7, the contract-alignment findings (§4), the design specificati
 - `source_track_refs[]` placed as a new top-level `FusedObject` field, `Contributor` left unchanged — audit lineage and operational identity-reference summary kept as separate structures so the schema shape implies no physical-object grouping (D1, §5).
 
 **Signed:** Olatomiwa Oladunjoye — 2026-07-17
-**Contract commit:** `<filled in after commit; the completion record cites this>`
+**Contract commit:** `70a690663fac52aa6ee4f7bc4981d6f2f67f8728`
 
 ---
 
