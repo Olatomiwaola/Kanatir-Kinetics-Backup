@@ -1,0 +1,14 @@
+injector: bootstrap=localhost:9092 scenario=D site=zone-D
+NOTE: injected at features.* - real MSFE/ADE/CSAT/XAI run every hop; label evidence as 'injected (deterministic producer)'.
+[D] long-running incident @ zone-D for 70.0s (feed every 8.0s)
+  -> features.video     src=cam-01   site=zone-D aid=900001 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900002 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900003 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900004 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900005 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900006 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900007 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900008 tracks=[(7, 'uav')]
+  -> features.video     src=cam-01   site=zone-D aid=900009 tracks=[(7, 'uav')]
+[D] fed 9 observations over ~70.0s
+injector: done (envelopes flushed).

@@ -152,3 +152,99 @@ real CVP/APP ledger evidence remain. Do NOT claim the live gate passed.
   scenarioBprime_MSFEunion_{fused,anomalies}.jsonl
   scenarioC_fused.jsonl  (scenarioC_alert.jsonl EMPTY/stale)
 ================================================================================
+
+## Scenario C (RE-RUN after infra recovery) — PASS
+Config: CSAT_MAX_AGE_S=30 CSAT_DEDUP_WINDOW_S=20 (shared C/degraded/D), MSFE_WINDOW_S=2.
+inject: video UAV cam-01/1, video GROUND cam-01/2, acoustic AMBIENT app-01 Wind,
+site zone-C, spacing 3s. 3 separate windows -> 3 anomalies -> CSAT grouped.
+VERIFIED: class_breakdown={UAV:1,GROUND:1,AMBIENT:1,UNKNOWN:0} (sum 3 == observation_count 3),
+3 nonzero classes; classification (TRIGGER)=AMBIENT (single class, distinct from breakdown);
+distinct_video_track_ref_count=2 (video tracks cam-01/1, cam-01/2; AMBIENT contributed
+NO ref -> modality=['acoustic'], refs=None); identity_reference_available=true;
+source_track_refs=[(cam-01,1),(cam-01,2)]; group_reason=same_site_within_sliding_window;
+M6 emitted ExplainedAlert explained_schema_version=1.0.0, no gate rejection.
+HONESTY: AMBIENT necessarily came from the acoustic path (video cannot yield AMBIENT).
+Fresh clean captures this run (run-1 topic_*.jsonl archived to *.run1.jsonl).
+Location: scenarioC_alert.jsonl; topic_{fused.objects,anomalies.raw,alerts.triaged,alerts.explained}.jsonl.
+
+## Degraded input — PASS (null-not-0) [flowing cases]
+inject: RF-only (features.rf), acoustic-only (Silence), video-no-track (empty
+detections), distinct sites zone-D0-{rf,ac,novid}.
+VERIFIED (both flowing alerts): identity_reference_available=false,
+distinct_video_track_ref_count=null (NOT 0), source_track_refs=null.
+  - acoustic-only zone-D0-ac: class=AMBIENT, refs=None.
+  - video-no-track zone-D0-novid: refs=None.
+FINDING (verbatim, out of M5.1 scope): live MSFE subscribes only
+features.video+features.acoustic (FEATURE_TOPICS, __main__.py:39), NOT features.rf,
+so RF-only produced NO fused object / anomaly / alert. The null-not-0 property is
+proven by the acoustic-only and no-track-id cases. M5.1 changes no MSFE topics.
+OBSERVATION (pre-existing, non-M5.1): empty-frame video fused object came out
+classification=UAV conf=0 (BeliefMass.top_hypothesis returns first specific
+hypothesis under full ignorance). Does not affect the degraded ref property.
+Location: scenarioDegraded_alerts.jsonl (triaged lines 2-3).
+
+## Scenario D — PASS (geo-temporal incident continuity)
+Config: CSAT_MAX_AGE_S=30 CSAT_DEDUP_WINDOW_S=20. inject: cam-01 track7 @ zone-D
+every 8s for 70s (8<20 -> group never idle-closes mid-incident -> hits 30s max-age).
+VERIFIED 3 emissions, SAME incident_id=eea3eb57-cb46-4cda-a2d3-0520f5c093b4,
+incident_sequence=0,1,2 (obs 4,4,1). Group aged out at max-age and re-emitted under
+the stable id rather than reopening with a new id (the wrong behavior). Geo-temporal
+continuity, NOT physical-object continuity. Location: scenarioD_alerts.jsonl.
+
+## Scenario E — FORMAL — PASS (sealed M6 read-only consumes SA 1.1.0)
+Correct M6 field layout: ExplainedAlert has NO sa_schema_version field and
+audit_event_ids is a computed @property (not serialized) -- that is why the
+earlier probe returned None; lineage is read from contributors[].audit_event_id.
+VERIFIED against C's alert (alert_id=44da0a53-ed6e-498f-bbde-13db1db3e763,
+sa_schema_version=1.1.0): matching ExplainedAlert explained_schema_version=1.0.0
+(sealed M6 unchanged), explainer_kind=templated, alert_id backref matches,
+anomaly_ids=3, attribution_available=false + honest note, contributors audit ids
+[900001,900002,900003] (lineage intact). XAI log: 0 schema-skip/reject lines across
+the resumed run, 6 xai.explained emissions. M5.1 additive alert fields did NOT break
+M6 parsing. No M6 source/schema/test changed. Location: scenarioE_formal.txt.
+
+## Injected live-gate scenarios: A,B,B-prime,C,degraded,D,E ALL PASS.
+Remaining for full gate: real CVP/APP capture for PGC audit-ledger counts
+before/after (injector uses synthetic audit ids; split-evidence plan).
+
+## Real CVP capture (privacy-safe, file source test.avi) — PARTIAL
+PURPOSE: PGC audit-ledger before/after counts + real (non-synthetic) audit ids.
+Ran real CVP (YOLOv8n + ByteTrack + privacy gate) on test.avi, --max-frames 20,
+--site-id zone-REAL, --sensor-id cam-real.
+LEDGER EVIDENCE — PASS: audit_events 6607 -> 6627 (delta=20, one per frame).
+  New rows real gate-generated: event_id 6608-6627, actor=cvp, sensor_id=cam-real,
+  action='no PII actions'. max_event_id=6627; count(event_id>=900001)=0 -> NOT the
+  injector's synthetic 900001 range. Real privacy gate wrote real ledger rows and
+  the chain carried real audit ids. Location: ledger_before.txt, ledger_after.txt,
+  cvp_real_capture.log.
+REAL TRACK_IDS — NOT DEMONSTRATED (verbatim): all 15 cam-real fused windows have
+  source_track_refs=None. CVP logged 0 detections. Probe: test.avi is 150 frames
+  and yields ZERO YOLOv8n detections anywhere (sampled 12 frames @ conf 0.15) --
+  it is objectless test footage, so no ByteTrack ids can exist. Real end-to-end
+  track_id flow cannot be shown with this media. (Real-track-id PRESERVATION is
+  already covered by the MSFE unit test and by injected B/B-prime, which use
+  controlled ids precisely because real ids cannot be deterministically forced.)
+  To demonstrate real track_ids live would need object-bearing footage (not in
+  repo) or a live webcam capture (privacy-sensitive; requires operator consent).
+
+## Real CVP capture #2 (VisDrone static sequence) — PASS (real track_ids + ledger)
+Media finding: datasets/VisDrone is VisDrone2019-DET-val = 548 independent aerial
+IMAGES (not video); YOLOv8n detects 8-52 objects/image. cv2.VideoCapture accepts a
+printf %04d image-sequence pattern (and single images), NOT a glob/dir. Built a
+15-frame STATIC sequence from one 52-detection image (seq_%04d.jpg x15) so ByteTrack
+confirms tracks over consecutive frames.
+Ran real CVP (YOLOv8n+ByteTrack+privacy gate), --sensor-id cam-visdrone,
+--site-id zone-REAL2, --max-frames 15, --conf 0.25.
+LEDGER: audit_events 6627 -> 6642 (delta=15). New rows real gate-generated.
+REAL TRACK_IDS — PASS: 15/15 fused windows carried source_track_refs; 53 distinct
+REAL ByteTrack ids (1..53) from real detections (NOT injector 5/7).
+REAL-CAPTURE TriagedAlert (zone-REAL2): sa_schema_version=1.1.0, observation_count=15,
+distinct_video_track_ref_count=53, identity_reference_available=true,
+source_track_refs sensor=cam-visdrone, audit_event_ids=[6628..6642] (real ledger
+range, NOT synthetic 900001), group_reason=same_site_within_sliding_window.
+This proves M5.1 ref-preservation end-to-end through the REAL perception front-end
+with REAL PGC audit lineage. Location: scenarioReal_visdrone_alert.jsonl,
+cvp_visdrone_capture.log, ledger_before2.txt.
+
+## LIVE GATE COMPLETE: A,B,B-prime,C,degraded,D,E PASS; PGC ledger PASS (real
+## capture, delta 20 then 15); real ByteTrack track_ids PASS (53 real ids e2e).

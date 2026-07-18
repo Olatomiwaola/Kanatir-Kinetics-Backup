@@ -1,0 +1,8 @@
+  explained_schema_version  1.0.0
+  explainer_kind            templated
+  alert_id (backref)        44da0a53-ed6e-498f-bbde-13db1db3e763 -> matches C alert: True
+  anomaly_ids count         3
+  attribution_available     False
+  attribution_note          'alert is severity=info (not anomalous) — attribution describes triage
+  explanation_text (head)   "Alert 44da0a53 — severity INFO, classification 'AMBIENT', at site zone-C. This 
+  contributors audit ids    [900001, 900002, 900003] (lineage via contributors; audit_event_ids is a derived property)

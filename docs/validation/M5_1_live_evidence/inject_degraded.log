@@ -1,0 +1,7 @@
+injector: bootstrap=localhost:9092 scenario=degraded site=zone-D0
+NOTE: injected at features.* - real MSFE/ADE/CSAT/XAI run every hop; label evidence as 'injected (deterministic producer)'.
+[degraded] rf-only / acoustic-only / video-no-track @ zone-D0-*
+  -> features.rf        src=rap-01   site=zone-D0-rf aid=900001 band=wifi_2g4
+  -> features.acoustic  src=app-01   site=zone-D0-ac aid=900002 yamnet=[('Silence', 0.7)]
+  -> features.video     src=cam-09   site=zone-D0-novid aid=900003 tracks=none
+injector: done (envelopes flushed).

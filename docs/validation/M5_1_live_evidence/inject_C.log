@@ -1,0 +1,7 @@
+injector: bootstrap=localhost:9092 scenario=C site=zone-C
+NOTE: injected at features.* - real MSFE/ADE/CSAT/XAI run every hop; label evidence as 'injected (deterministic producer)'.
+[C] mixed classes UAV+GROUND+AMBIENT @ zone-C (spacing 3.0s)
+  -> features.video     src=cam-01   site=zone-C aid=900001 tracks=[(1, 'uav')]
+  -> features.video     src=cam-01   site=zone-C aid=900002 tracks=[(2, 'car')]
+  -> features.acoustic  src=app-01   site=zone-C aid=900003 yamnet=[('Wind', 0.8)]
+injector: done (envelopes flushed).

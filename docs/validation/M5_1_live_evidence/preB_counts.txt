@@ -1,0 +1,4 @@
+  fused.objects        5
+  anomalies.raw        5
+  alerts.triaged        1
+  alerts.explained        1

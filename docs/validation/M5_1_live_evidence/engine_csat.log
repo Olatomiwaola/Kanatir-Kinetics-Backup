@@ -1,0 +1,31 @@
+2026-07-17 20:09:34,835 csat csat.start in=anomalies.raw out=alerts.triaged group=csat accepts anomaly_schema_major=1
+2026-07-17 20:12:14,953 csat csat.triaged alert_id=44da0a53-ed6e-498f-bbde-13db1db3e763 severity=info n_anomalies=3 suppressed=2 baseline_state=warmup conflict_k=0.000 audit_event_ids=[900001, 900002, 900003]
+2026-07-17 20:17:31,887 csat csat.triaged alert_id=413467fc-5459-4e8a-be43-8880b82018df severity=info n_anomalies=1 suppressed=0 baseline_state=warmup conflict_k=0.000 audit_event_ids=[900002]
+2026-07-17 20:17:31,889 csat csat.triaged alert_id=8debd5a9-dab8-4002-b551-34d120bcdae6 severity=info n_anomalies=1 suppressed=0 baseline_state=warmup conflict_k=0.000 audit_event_ids=[900003]
+2026-07-17 20:21:46,341 csat csat.triaged alert_id=b297c593-dd84-45b1-8698-f0b99a046cb1 severity=info n_anomalies=4 suppressed=3 baseline_state=warmup conflict_k=0.000 audit_event_ids=[900001, 900002, 900003, 900004]
+2026-07-17 20:22:17,325 csat csat.triaged alert_id=d758384b-3ef3-4996-a9f2-955e66906b09 severity=info n_anomalies=4 suppressed=3 baseline_state=warmup conflict_k=0.000 audit_event_ids=[900005, 900006, 900007, 900008]
+2026-07-17 20:22:40,576 csat csat.triaged alert_id=6b7baca1-6573-47aa-89c3-8fe299992773 severity=info n_anomalies=1 suppressed=0 baseline_state=warmup conflict_k=0.000 audit_event_ids=[900009]
+2026-07-17 20:37:54,803 csat csat.triaged alert_id=76618c0d-2a61-4a90-948b-96e6dd3ceb22 severity=info n_anomalies=15 suppressed=14 baseline_state=warmup conflict_k=0.000 audit_event_ids=[6608, 6609, 6610, 6611, 6612, 6613, 6614, 6615, 6616, 6617, 6618, 6619, 6620, 6621, 6622, 6623, 6624, 6625, 6626, 6627]
+2026-07-17 20:52:44,807 csat csat.triaged alert_id=c2d63855-0a0e-4bd5-9c91-8e2ff370d859 severity=info n_anomalies=15 suppressed=14 baseline_state=active conflict_k=0.000 audit_event_ids=[6628, 6629, 6630, 6631, 6632, 6633, 6634, 6635, 6636, 6637, 6638, 6639, 6640, 6641, 6642]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/olaberry/dev/Kanatir-Kinetics-Backup/kanatir/core/csat/__main__.py", line 132, in <module>
+    main()
+    ~~~~^^
+  File "/Users/olaberry/dev/Kanatir-Kinetics-Backup/kanatir/core/csat/__main__.py", line 123, in main
+    _publish(buf.flush_ready(now=now))
+             ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/olaberry/dev/Kanatir-Kinetics-Backup/kanatir/core/csat/triage.py", line 237, in flush_ready
+    out.append(grp.to_alert())
+               ~~~~~~~~~~~~^^
+  File "/Users/olaberry/dev/Kanatir-Kinetics-Backup/kanatir/core/csat/triage.py", line 167, in to_alert
+    trigger=self.trigger(),
+            ~~~~~~~~~~~~^^
+  File "/Users/olaberry/dev/Kanatir-Kinetics-Backup/kanatir/core/csat/triage.py", line 150, in trigger
+    return max(
+        self.members,
+    ...<9 lines>...
+        ),
+    )
+ValueError: max() iterable argument is empty

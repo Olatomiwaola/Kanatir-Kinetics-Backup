@@ -1,0 +1,23 @@
+2026-07-17 20:37:25 [info     ] cvp.started                    sensor_id=cam-real source=test.avi weights=yolov8n.pt
+2026-07-17 20:37:26 [info     ] privacy_gate.passed            audit_event_id=6608 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:27 [info     ] privacy_gate.passed            audit_event_id=6609 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:27 [info     ] privacy_gate.passed            audit_event_id=6610 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:27 [info     ] privacy_gate.passed            audit_event_id=6611 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:28 [info     ] privacy_gate.passed            audit_event_id=6612 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:28 [info     ] privacy_gate.passed            audit_event_id=6613 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:28 [info     ] privacy_gate.passed            audit_event_id=6614 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:28 [info     ] privacy_gate.passed            audit_event_id=6615 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:29 [info     ] privacy_gate.passed            audit_event_id=6616 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:29 [info     ] privacy_gate.passed            audit_event_id=6617 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:29 [info     ] privacy_gate.passed            audit_event_id=6618 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:29 [info     ] privacy_gate.passed            audit_event_id=6619 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:30 [info     ] privacy_gate.passed            audit_event_id=6620 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:30 [info     ] privacy_gate.passed            audit_event_id=6621 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:30 [info     ] privacy_gate.passed            audit_event_id=6622 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:31 [info     ] privacy_gate.passed            audit_event_id=6623 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:31 [info     ] privacy_gate.passed            audit_event_id=6624 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:31 [info     ] privacy_gate.passed            audit_event_id=6625 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:32 [info     ] privacy_gate.passed            audit_event_id=6626 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:32 [info     ] privacy_gate.passed            audit_event_id=6627 modality=video pii_present=False pii_scrubbed=False sensor_id=cam-real
+2026-07-17 20:37:32 [info     ] cvp.max_frames_reached         frames=20
+2026-07-17 20:37:32 [info     ] cvp.stopped                    frames=20

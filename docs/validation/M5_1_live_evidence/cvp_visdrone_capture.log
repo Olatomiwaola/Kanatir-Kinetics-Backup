@@ -1,0 +1,18 @@
+2026-07-17 20:52:09 [info     ] cvp.started                    sensor_id=cam-visdrone source=/private/tmp/claude-501/-Users-olaberry-dev-Kanatir-Kinetics-Backup/4f4ae069-8fee-4e6c-a903-152faadb3765/scratchpad/visdrone_seq/seq_%04d.jpg weights=yolov8n.pt
+2026-07-17 20:52:11 [info     ] privacy_gate.passed            audit_event_id=6628 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:12 [info     ] privacy_gate.passed            audit_event_id=6629 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:14 [info     ] privacy_gate.passed            audit_event_id=6630 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:15 [info     ] privacy_gate.passed            audit_event_id=6631 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:16 [info     ] privacy_gate.passed            audit_event_id=6632 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:17 [info     ] privacy_gate.passed            audit_event_id=6633 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:18 [info     ] privacy_gate.passed            audit_event_id=6634 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:19 [info     ] privacy_gate.passed            audit_event_id=6635 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:20 [info     ] privacy_gate.passed            audit_event_id=6636 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:21 [info     ] privacy_gate.passed            audit_event_id=6637 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:22 [info     ] privacy_gate.passed            audit_event_id=6638 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:24 [info     ] privacy_gate.passed            audit_event_id=6639 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:25 [info     ] privacy_gate.passed            audit_event_id=6640 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:26 [info     ] privacy_gate.passed            audit_event_id=6641 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:27 [info     ] privacy_gate.passed            audit_event_id=6642 modality=video pii_present=True pii_scrubbed=True sensor_id=cam-visdrone
+2026-07-17 20:52:27 [info     ] cvp.max_frames_reached         frames=15
+2026-07-17 20:52:27 [info     ] cvp.stopped                    frames=15
